@@ -8,6 +8,10 @@ cat <<EOF
 <html>
 <head>
     <title>MyDocs</title>
+
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
 </head>
 <body>
 <h2>My Documents</h2>
