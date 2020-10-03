@@ -1,0 +1,12 @@
+<map id="wxImageHandler" name="wxImageHandler">
+<area shape="rect" id="node3" href="$classwx_g_i_f_handler.html" title="This is the image handler for the GIF format. " alt="" coords="305,5,411,32"/>
+<area shape="rect" id="node4" href="$classwx_i_f_f_handler.html" title="This is the image handler for the IFF format. " alt="" coords="306,56,410,83"/>
+<area shape="rect" id="node5" href="$classwx_j_p_e_g_handler.html" title="This is the image handler for the JPEG format. " alt="" coords="299,107,417,133"/>
+<area shape="rect" id="node6" href="$classwx_p_c_x_handler.html" title="This is the image handler for the PCX format. " alt="" coords="302,157,414,184"/>
+<area shape="rect" id="node7" href="$classwx_p_n_g_handler.html" title="This is the image handler for the PNG format. " alt="" coords="301,208,415,235"/>
+<area shape="rect" id="node8" href="$classwx_p_n_m_handler.html" title="This is the image handler for the PNM format. " alt="" coords="301,259,415,285"/>
+<area shape="rect" id="node9" href="$classwx_t_g_a_handler.html" title="This is the image handler for the TGA format. " alt="" coords="303,309,413,336"/>
+<area shape="rect" id="node10" href="$classwx_t_i_f_f_handler.html" title="This is the image handler for the TIFF format. " alt="" coords="302,360,414,387"/>
+<area shape="rect" id="node11" href="$classwx_x_p_m_handler.html" title="This is the image handler for the XPM format. " alt="" coords="301,411,415,437"/>
+<area shape="rect" id="node2" href="$classwx_object.html" title="This is the root class of many of the wxWidgets classes. " alt="" coords="5,208,83,235"/>
+</map>

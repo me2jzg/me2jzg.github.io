@@ -1,0 +1,10 @@
+<map id="wxComboCtrl" name="wxComboCtrl">
+<area shape="rect" id="node8" href="$classwx_owner_drawn_combo_box.html" title="wxOwnerDrawnComboBox is a combobox with owner&#45;drawn list items. " alt="" coords="5,379,185,405"/>
+<area shape="rect" id="node9" href="$classwx_rich_text_style_combo_ctrl.html" title="This is a combo control that can display the styles in a wxRichTextStyleSheet, and apply the selectio..." alt="" coords="209,379,395,405"/>
+<area shape="rect" id="node2" href="$classwx_control.html" title="This is the base class for a control or &quot;widget&quot;. " alt="" coords="101,229,183,256"/>
+<area shape="rect" id="node3" href="$classwx_window.html" title="wxWindow is the base class for all windows and represents any visible object on screen. " alt="" coords="99,155,185,181"/>
+<area shape="rect" id="node4" href="$classwx_evt_handler.html" title="A class that can handle events from the windowing system. " alt="" coords="90,80,194,107"/>
+<area shape="rect" id="node5" href="$classwx_object.html" title="This is the root class of many of the wxWidgets classes. " alt="" coords="49,5,126,32"/>
+<area shape="rect" id="node6" href="$classwx_trackable.html" title="Add&#45;on base class for a trackable object. " alt="" coords="150,5,246,32"/>
+<area shape="rect" id="node7" href="$classwx_text_entry.html" title="Common base class for single line text entry fields. " alt="" coords="207,229,303,256"/>
+</map>

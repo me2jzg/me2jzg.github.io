@@ -1,0 +1,6 @@
+<map id="wxHelpControllerBase" name="wxHelpControllerBase">
+<area shape="rect" id="node3" href="$classwx_ext_help_controller.html" title="This class implements help via an external browser. " alt="" coords="5,155,148,181"/>
+<area shape="rect" id="node4" href="$classwx_help_controller.html" title="This is an alias for one of a family of help controller classes which is most appropriate for the cur..." alt="" coords="173,155,295,181"/>
+<area shape="rect" id="node5" href="$classwx_html_help_controller.html" title="This help controller provides an easy way of displaying HTML help in your application (see HTML Sampl..." alt="" coords="320,155,471,181"/>
+<area shape="rect" id="node2" href="$classwx_object.html" title="This is the root class of many of the wxWidgets classes. " alt="" coords="195,5,273,32"/>
+</map>

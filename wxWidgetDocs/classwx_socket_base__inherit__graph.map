@@ -1,0 +1,9 @@
+<map id="wxSocketBase" name="wxSocketBase">
+<area shape="rect" id="node3" href="$classwx_datagram_socket.html" title="wxDatagramSocket" alt="" coords="5,155,143,181"/>
+<area shape="rect" id="node4" href="$classwx_socket_client.html" title="wxSocketClient" alt="" coords="167,155,282,181"/>
+<area shape="rect" id="node8" href="$classwx_socket_server.html" title="wxSocketServer" alt="" coords="307,155,425,181"/>
+<area shape="rect" id="node2" href="$classwx_object.html" title="This is the root class of many of the wxWidgets classes. " alt="" coords="186,5,263,32"/>
+<area shape="rect" id="node5" href="$classwx_protocol.html" title="Represents a protocol for use with wxURL. " alt="" coords="181,229,268,256"/>
+<area shape="rect" id="node6" href="$classwx_f_t_p.html" title="wxFTP can be used to establish a connection to an FTP server and perform all the usual operations..." alt="" coords="146,304,210,331"/>
+<area shape="rect" id="node7" href="$classwx_h_t_t_p.html" title="wxHTTP can be used to establish a connection to an HTTP server. " alt="" coords="234,304,309,331"/>
+</map>
