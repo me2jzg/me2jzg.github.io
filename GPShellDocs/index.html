@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>GPSHELL(1) 2.0.0 | GPShell Documentation</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">GPSHELL(1) 2.0.0 | GPShell Documentation</h1>
+</header>
+<h1 id="name">NAME</h1>
+<p><strong>gpshell</strong> - command line tool for the management of GlobalPlatform compliant smart cards</p>
+<h1 id="synopsis">SYNOPSIS</h1>
+<div class="line-block"><strong>gpshell</strong> <em>scriptfile</em></div>
+<h1 id="description">DESCRIPTION</h1>
+<p>gpshell can manage applications on smart cards supporting the GlobalPlatform. This comprises the installation and deletion of applications, getting the applications status and card data. These applications are practical always Java Card applets. Additional key management commands are provided.</p>
+<p>The most common way to use gpshell is a script file. But it is also possible to read the commands from stdin if no script file is provided.</p>
+<p>Reading the commands from stdin allows to feed in the commands dynamically and use conditionals when using the <a href="https://en.wikipedia.org/wiki/Expect">Expect</a> pattern. Tools are available for a variety of script languages, shells and programming languages. Example are to support environment variables and handle results and output conditionally.</p>
+<p>There are several <code>txt</code> example scripts provided which gets installed into <code>usr/local/share/docs</code> or <code>/home/linuxbrew/.linuxbrew/opt/globalplatform/share/doc/gpshell1/</code> or can be found <a href="https://github.com/kaoh/globalplatform/tree/master/gpshell">online</a>.</p>
+<h1 id="commands">COMMANDS</h1>
+<dl>
+<dt><strong>mode_201</strong></dt>
+<dd><p>Set protocol mode to OpenPlatform 2.0.1. This is the default.</p>
+</dd>
+<dt><strong>mode_211</strong></dt>
+<dd><p>Set protocol mode to GlobalPlatform 2.1.1 and later</p>
+</dd>
+<dt><strong>visa_key_derivation</strong></dt>
+<dd><p>For cards which use the VISA key derivation scheme for the key calculation, like GemXpresso Pro, Palmera Protect or some JCOP cards this must be set.</p>
+</dd>
+<dt><strong>emv_cps11_key_derivation</strong></dt>
+<dd><p>For cards which uses the EMV CPS 1.1 key derivation scheme for the key calculation, like a Sm@rtCafe Expert 3.0 this must be set.</p>
+</dd>
+<dt><strong>enable_trace</strong></dt>
+<dd><p>Enable APDU trace</p>
+</dd>
+</dl>
+<p>You will see the sent APDUs in clear text. The last two bytes of the response are the response code. A response code of 9000 means success, otherwise the response code indicates an error. This may be OK when deleting a non existing applet or package.</p>
+<dl>
+<dt><strong>enable_timer</strong></dt>
+<dd><p>Enable the logging of the execution times of commands.</p>
+</dd>
+<dt><strong>establish_context</strong></dt>
+<dd><p>Establish context. This must always be executed before connecting to a card.</p>
+</dd>
+<dt><strong>card_connect</strong> -reader <em>readerName</em> -protocol <em>protocol</em></dt>
+<dd><p>Connect to card in the reader with <em>readerName</em>. By default protocol is 0 = T0.</p>
+</dd>
+<dt><strong>card_connect</strong> -readerNumber <em>x</em> -protocol <em>protocol</em></dt>
+<dd><p>Connect to card in the <em>x</em> th reader in the system. By default protocol is 0 = T0.</p>
+</dd>
+<dt><strong>open_sc</strong> -keyind <em>x</em> -keyver <em>x</em> -key <em>key</em> -mac_key <em>mac-key</em> -enc_key <em>enc-key</em> -kek_key <em>kek-key</em> -security <em>securityLevel</em> -scp <em>protocol</em> -scpimpl <em>impl</em> -keyDerivation <em>derivation</em></dt>
+<dd><p>Open a secure channel</p>
+</dd>
+</dl>
+<p>For OpenPlatform 2.0.1’ cards only -keyind -keyver -mac_key and -enc_key are necessary.</p>
+<p>For GlobalPlatform 2.1.1 and later cards -scp and -scpimpl should not be necessary to supply. You must also specify -kek_key.</p>
+<p>If the card supports a Secure Channel Protocol Implementation with only one base key, specify this key with -key and omit the others.</p>
+<p>If the card uses a key derivation mechanism you must enable the derivation mode with the -keyDerivation option and you must specify with -key the master (mother) key. -kek_key, -mac_key and -enc_key are not relevant is this case. See the section Options and Key Derivation. <strong>NOTE:</strong> If the secure channel is going to be opened when no security domain is selected then the command get_secure_channel_protocol_details must be executed before to be able to get the Secure Channel Protocol Implementation.</p>
+<dl>
+<dt><strong>select</strong> -AID <em>AID</em></dt>
+<dd><p>Select AID instance</p>
+</dd>
+<dt><strong>install</strong> -file <em>appletFile</em> -priv <em>privilege</em> -sdAID <em>sdAID</em> -AID <em>AIDInPkg</em> -pkgAID <em>packageAID</em> -instAID <em>instanceAID</em> -nvCodeLimit <em>x</em> -nvDataLimit <em>y</em></dt>
+<dd><p>Load and installs an applet in one step</p>
+</dd>
+</dl>
+<p>The parameters -AID -instAID -pkgAID -nvCodeLimit can be detected automatically and the -AID and -instAID is set to the first applet in <em>appletfile</em>.</p>
+<p>For the <em>sdAID</em> the AID selected with the select command is chosen if not given. Otherwise the default Card Manager / Security Issuer Domain AID is chosen. Usually you do not have to pass it.</p>
+<dl>
+<dt><strong>install_for_load</strong> -pkgAID <em>packageAID</em> -sdAID <em>sdAID</em> -nvCodeLimit <em>y</em></dt>
+<dd><p>Applet load preparation</p>
+</dd>
+</dl>
+<p>For the <em>sdAID</em> the AID selected with the select command is chosen if not given. Otherwise the default Card Manager / Security Issuer Domain AID is chosen. Usually you do not have to pass it.</p>
+<p>This command may be needed if the combined install command does not work.</p>
+<dl>
+<dt><strong>load</strong> -file <em>appletFile</em></dt>
+<dd><p>Load applet</p>
+</dd>
+</dl>
+<p>This command may be needed if the combined install command does not work.</p>
+<dl>
+<dt><strong>install_for_install</strong> -priv <em>privilege</em> -AID <em>AIDInPkg</em> -pkgAID <em>pkgAID</em> -instAID <em>instanceAID</em> -nvDataLimit <em>x</em></dt>
+<dd><p>Instantiate applet</p>
+</dd>
+</dl>
+<p>This command may be needed if the combined install command does not work. Or you want to install a pre-installed Security Domain.</p>
+<dl>
+<dt><strong>card_disconnect</strong></dt>
+<dd><p>Disconnect card</p>
+</dd>
+<dt><strong>get_status</strong> -element <em>e0</em></dt>
+<dd><p>List applets and packages and security domains</p>
+</dd>
+<dt><strong>get_status</strong> -element <em>20</em></dt>
+<dd><p>List packages</p>
+</dd>
+<dt><strong>get_status</strong> -element <em>40</em></dt>
+<dd><p>List applets or security domains</p>
+</dd>
+<dt><strong>get_status</strong> -element <em>80</em></dt>
+<dd><p>List Card Manager / Security Issuer Domain</p>
+</dd>
+<dt><strong>release_context</strong></dt>
+<dd><p>Release context</p>
+</dd>
+<dt><strong>put_sc_key</strong> -keyver <em>keyver</em> -newkeyver <em>newkeyver</em> -mac_key <em>new_MAC_key</em> -enc_key <em>new_ENC_key</em> -kek_key <em>new_KEK_key</em></dt>
+<dd><p>Add or replace a key set version</p>
+</dd>
+</dl>
+<p>If a new key set version is to be added <em>keyver</em> must be set to 0. If <em>keyver</em> equals <em>newkeyver</em> an existing key version is replaced. An existing key set version cannot be replaced with a key set version using a different key size.</p>
+<dl>
+<dt><strong>put_sc_key</strong> -keyver <em>keyver</em> -newkeyver <em>newkeyver</em> -key <em>key</em> -keyDerivation “derivation”</dt>
+<dd><p>Replace key set version <em>keyver</em> using key derivation <em>derivation</em> using the master (mother) key <em>y</em></p>
+</dd>
+<dt><strong>put_dm_keys</strong> -keyver <em>keyver</em> -newkeyver <em>newkeyver</em> -file <em>public_rsa_key_file</em> -pass <em>password</em> -key <em>new_receipt_generation_key</em></dt>
+<dd><p>Add a RSA delegated management key in version <em>newkeyver</em></p>
+</dd>
+<dt><strong>send_apdu</strong> -sc 0 -APDU <em>apdu</em></dt>
+<dd><p>Send APDU <em>apdu</em> without secure channel</p>
+</dd>
+</dl>
+<p>The APDU is given as hex without spaces and without leading 0x.</p>
+<dl>
+<dt><strong>get_data</strong> -identifier <em>identifier</em></dt>
+<dd><p>A GET DATA command returning the data for the given identifier. See the identifier options for details.</p>
+</dd>
+<dt><strong>get_key_information_templates</strong> -keyTemplate <em>index</em></dt>
+<dd><p>A GET DATA command returning the key information templates in the selected security domain. <strong>NOTE:</strong> The security domain must be selected and this only works outside of a secure channel.</p>
+</dd>
+<dt><strong>get_extended_card_resources_information</strong></dt>
+<dd><p>A GET DATA command returning the extended card resources information in the issuer security domain. <strong>NOTE:</strong> The security domain must be selected and this only works outside of a secure channel.</p>
+</dd>
+<dt><strong>get_secure_channel_protocol_details</strong></dt>
+<dd><p>A GET DATA command returning the secure channel protocol details and remembering them for a later open_sc. <strong>NOTE:</strong> The security domain must be selected and this only works outside of a secure channel.</p>
+</dd>
+<dt><strong>install_for_personalization</strong> -aid <em>AID</em></dt>
+<dd><p>Prepare a security domain for the personalization of an applet with following store_data commands. <strong>NOTE:</strong> The security domain must be selected and this only works outside of a secure channel.</p>
+</dd>
+<dt><strong>store_data</strong> -dataFormat <em>format</em> -dataEncryption <em>encryption</em> -data <em>data</em></dt>
+<dd><p>Executes a STORE DATA command passing the <em>data</em> to the selected applet.</p>
+</dd>
+<dt><strong>get_card_recognition_data</strong></dt>
+<dd><p>A GET DATA command returning the card recognition data. <strong>NOTE:</strong> The security domain must be selected.</p>
+</dd>
+<dt><strong>delete_key</strong> -keyver <em>keyver</em> -keyind <em>keyind</em></dt>
+<dd><p>Deletes a key set version with a DELETE command. If only the keyver is passed the complete key set version is deleted. By default keyind is 0xFF to delete the complete key set version. If keyver is 0 all key set with the passed keyind are deleted.</p>
+</dd>
+</dl>
+<h1 id="options">OPTIONS</h1>
+<dl>
+<dt><strong>-keyind</strong> <em>x</em></dt>
+<dd><p>Key index <em>x</em></p>
+</dd>
+</dl>
+<p><strong>-keyver</strong> <em>x</em> Key set version x</p>
+<dl>
+<dt><strong>-newkeyver</strong> <em>x</em></dt>
+<dd><p>New key set version x</p>
+</dd>
+<dt><strong>-key</strong> <em>key</em></dt>
+<dd><p>Key value in hex</p>
+</dd>
+<dt><strong>-mac_key</strong> <em>key</em></dt>
+<dd><p>MAC key value in hex</p>
+</dd>
+<dt><strong>-enc_key</strong> <em>key</em></dt>
+<dd><p>ENC key value in hex</p>
+</dd>
+<dt><strong>-kek_key</strong> <em>key</em></dt>
+<dd><p>KEK key value in hex</p>
+</dd>
+<dt><strong>-security</strong> <em>x</em></dt>
+<dd><p>0: clear, 1: MAC, 3: MAC+ENC, 51: MAC+ENC+R-MAC+E-ENC (SCP03 only), 19: MAC+ENC-R-MAC (SCP02+SCP03 only), 17: MAC+R-MAC (SCP02+SCP03 only)</p>
+</dd>
+<dt><strong>-reader</strong> <em>readerName</em></dt>
+<dd><p>Smart card reader name</p>
+</dd>
+<dt><strong>-readerNumber</strong> <em>x</em></dt>
+<dd><p>Number of the reader in the system to connect to. If -reader is given this is ignored.</p>
+</dd>
+<dt><strong>-protocol</strong> <em>x</em></dt>
+<dd><p>Protocol, 0:T=0, 1:T=1 Should not be necessary to be stated explicitly.</p>
+</dd>
+<dt><strong>-AID</strong> <em>aid</em></dt>
+<dd><p>Applet ID</p>
+</dd>
+<dt><strong>-sdAID</strong> <em>aid</em></dt>
+<dd><p>Security Domain AID</p>
+</dd>
+<dt><strong>-pkgAID</strong> <em>aid</em></dt>
+<dd><p>Package AID</p>
+</dd>
+<dt><strong>-instAID</strong> <em>aid</em></dt>
+<dd><p>Instance AID</p>
+</dd>
+<dt><strong>-nvCodeLimit</strong> <em>x</em></dt>
+<dd><p>Non-volatile code size limit</p>
+</dd>
+<dt><strong>-nvDataLimit</strong> <em>x</em></dt>
+<dd><p>Non-volatile data size limit</p>
+</dd>
+<dt><strong>-vDataLimit</strong> <em>x</em></dt>
+<dd><p>Volatile data size limit</p>
+</dd>
+<dt><strong>-file</strong> <em>name</em></dt>
+<dd><p>File name</p>
+</dd>
+<dt><strong>-instParam</strong> <em>param</em></dt>
+<dd><p>Installation parameter</p>
+</dd>
+<dt><strong>-element</strong> <em>x</em></dt>
+<dd><p>Element type to be listed in hex</p>
+</dd>
+</dl>
+<ul>
+<li>80 - Card Manager / Card Issuer Security Domain only.</li>
+<li>40 - Applications (and Security Domains only in GP211 and later).</li>
+<li>20 - Executable Load Files only.</li>
+<li>10 - Executable Load Files and their Executable Modules only (Only GP211 and later)</li>
+</ul>
+<dl>
+<dt><strong>-format</strong> <em>x</em></dt>
+<dd><p>Sets the format of the response of the get_status command. This is only used for GlobalPlatform cards and required and only needed if the default is not supported by the smart card.</p>
+</dd>
+<dt><strong>-dataFormat</strong> <em>x</em></dt>
+<dd><p>Sets the data format flag for store_data command. Default 0.</p>
+</dd>
+</dl>
+<ul>
+<li>0 - No general encryption information or non - encrypted data</li>
+<li>0x20 - Application dependent encryption of the data</li>
+<li>0x40 - RFU(encryption indicator)</li>
+<li>0x60 - Encrypted data. Must be encrypted with data encryption key.</li>
+</ul>
+<dl>
+<dt><strong>-dataEncryption</strong> <em>x</em></dt>
+<dd><p>Sets the encryption format flag for store_data command. Note that this is just a flag and the data must be passed already in the correct encryption. Default 0.</p>
+</dd>
+</dl>
+<ul>
+<li>0 - No general data structure information</li>
+<li>0x08 - DGI format of the command data field</li>
+<li>0x10 - BER-TLV format of the command data field</li>
+<li>0x18 - RFU (data structure information)</li>
+</ul>
+<dl>
+<dt><strong>-responseDataExpected</strong> <em>x</em></dt>
+<dd><p>Sets if response data is expected for store_data command. 1 for expecting response data. Default 0.</p>
+</dd>
+<dt><strong>-keyTemplate</strong> <em>x</em></dt>
+<dd><p>Sets the key template index to return for the get_key_templates command. Default 0.</p>
+</dd>
+</dl>
+<ul>
+<li>0 - Deprecated format</li>
+<li>2 - New format (default)</li>
+</ul>
+<dl>
+<dt><strong>-sc</strong> <em>x</em></dt>
+<dd><p>Secure Channel mode (0 off, 1 on)</p>
+</dd>
+<dt><strong>-APDU</strong> <em>apdu</em></dt>
+<dd><p>APDU to be sent. Must be in hex format, e.g. 80CA00CF00.</p>
+</dd>
+<dt><strong>-priv</strong> <em>x</em></dt>
+<dd><p>Privilege. E.g. 0x04 Default Selected</p>
+</dd>
+<dt><strong>-scp</strong> <em>x</em></dt>
+<dd><p>Secure Channel Protocol (1 SCP01, 2 SCP02, 3 SCP03, default no set). Should not be necessary to be stated explicitly.</p>
+</dd>
+<dt><strong>-scpimpl</strong> <em>x</em></dt>
+<dd><p>Secure Channel Implementation (default not set) Should not be necessary to be stated explicitly. See the get_secure_channel_protocol_details command to detect the Secure Channel Protocol Implementation.</p>
+</dd>
+<dt><strong>-pass</strong> <em>password</em></dt>
+<dd><p>Password for key decryption</p>
+</dd>
+<dt><strong>-identifier</strong> <em>identifier</em></dt>
+<dd><p>Identifier for the tag for the get_data command. Must be in hex format, e.g. 9F7F.</p>
+</dd>
+</dl>
+<p>There are several identifiers available but in general not all cards are supporting them. The GlobalPlatform specification v2.3.1 lists a few in section 11.3.3.1. It is useful to use some ASN.1 parser to interpret these data, like <a href="https://lapo.it/asn1js">asn1js</a></p>
+<p>Some useful identifier are:</p>
+<ul>
+<li>9F7F - CPLC (Card Production Life Cycle) Data</li>
+<li>00E0 - Key Information Templates. Instead of the first byte 00 also 01, … can be used to get more key information templates if available. There is a dedicated command for getting this: get_key_information_templates</li>
+<li>2F00 - List of applications</li>
+<li>FF21 - Extended card resources. There is a dedicated command for getting this: get_extended_card_resources_information</li>
+<li>0066 - Card Recogniti0on Data. There is a dedicated command for getting this: get_card_recognition_data</li>
+</ul>
+<dl>
+<dt><strong>-data</strong> <em>data</em></dt>
+<dd><p>Data in hex format for the store_data command.</p>
+</dd>
+<dt><strong>-noStop</strong></dt>
+<dd><p>Does not stop in case of an error</p>
+</dd>
+</dl>
+<h2 id="format-of-cplc-data">Format of CPLC data</h2>
+<p>You see the command trace of a GET DATA command and the interpreted result.</p>
+<pre><code>=&gt; 80 CA 9F 7F 00 .....
+(12102 usec)
+&lt;= 9F 7F 2A 47 90 50 40 47 91 81 02 31 00 83 58 00 ..*G.P@G...1..X.
+11 68 91 45 81 48 12 83 65 00 00 00 00 01 2F 31 .h.E.H..e...../1
+30 31 31 36 38 00 00 00 00 00 00 00 00 90 00 01168..........
+Status: No Error
+IC Fabricator : 4790
+IC Type : 5040
+Operating System ID : 4791
+Operating System release date : 8102 (11.4.2008)
+Operating System release level : 3100
+IC Fabrication Date : 8358 (23.12.2008)
+IC Serial Number : 00116891
+IC Batch Identifier : 4581
+IC Module Fabricator : 4812
+IC Module Packaging Date : 8365 (30.12.2008)
+ICC Manufacturer : 0000
+IC Embedding Date : 0000
+IC Pre-Personalizer : 012F
+IC Pre-Perso. Equipment Date : 3130 (10.5.2003)
+IC Pre-Perso. Equipment ID : 31313638
+IC Personalizer : 0000
+IC Personalization Date : 0000
+IC Perso. Equipment ID : 00000000</code></pre>
+<p>Dates are stored as 2 bytes, the first specifying the year in the decade and the last 3 bytes the day within the year.</p>
+<dl>
+<dt><strong>-keyDerivation</strong> <em>derivation method</em></dt>
+<dd><p>Possible values are <em>none</em>, <em>visa2</em> or <em>emvcps11</em></p>
+</dd>
+</dl>
+<p>Choose <em>visa2</em> if you have a card which uses the VISA key derivation scheme for the key calculation, like GemXpresso Pro or some JCOP cards you must set this.</p>
+<p>Choose <em>emvcps11</em> If you have a card which uses the EMV CPS 1.1 key derivation scheme for the key calculation, like a Sm@rtCafe Expert 3.0 and later you must set this. Also for put_sc_key this is necessary for Sm@rtcafe 5.0 (and earlier(?)) cards</p>
+<h1 id="environment">ENVIRONMENT</h1>
+<dl>
+<dt><strong>GLOBALPLATFORM_DEBUG</strong></dt>
+<dd><p>Enables debugging output from the underlying GlobalPlatform library.</p>
+</dd>
+<dt><strong>GLOBALPLATFORM_LOGFILE</strong></dt>
+<dd><p>Sets the log file name for the debugging output.</p>
+</dd>
+</dl>
+<h1 id="key-derivation">Key Derivation</h1>
+<dl>
+<dt><strong>visa2</strong></dt>
+<dd><p>For the VISA2 key derivation scheme, like used in a GemXpresso Pro or some JCOP cards.</p>
+</dd>
+<dt><strong>emvcps11</strong></dt>
+<dd><p>For the key derivation according to EMV CPS 1.1 (CDK (CPG 2.04)), like Sm@rtCafe Expert 3.0 and later.</p>
+</dd>
+</dl>
+<p>Known unsupported key derivation schemes are:</p>
+<ul>
+<li>CDK (CPG 2.02)</li>
+<li>ISK(D)</li>
+</ul>
+<h1 id="tested-cards">Tested Cards</h1>
+<ul>
+<li>Gemalto IDCore 3010</li>
+<li>Oberthur CosmopoliC 32K (OP201)</li>
+<li>CosmopoliC 64K V5.2 (GP211, SCP01, Impl05)</li>
+<li>Axalto Cyberflex e-gate 32k (OP201)</li>
+<li>GemXpresso R3.2 E64</li>
+<li>IBM JCOP v2.2 41 (GP211)</li>
+<li>IBM JCOP 31 (36k)</li>
+<li>Palmera Protect V5</li>
+<li>JTopV15</li>
+<li>Nokia 6131 NFC Phone (GP211)</li>
+<li>Axalto Cyberflex Access 64k</li>
+<li>Gemalto Generations Flexible</li>
+<li>Sm@rtCafe Expert 3.0</li>
+<li>Tongfang420</li>
+</ul>
+<h1 id="misc">Misc</h1>
+<h2 id="about-install_for_load-and-install">About install_for_load and install</h2>
+<p>For CosmopoliC 64K (tested on V5.2), you need to specify the Security Domain AID. For example,</p>
+<pre><code>install -file helloworld.cap -sdAID A000000003000000 -nvCodeLimit 4000</code></pre>
+<p>For GemXpresso R3.2 E64, you need to specify the Security Domain AID (Card Manager AID). For example,</p>
+<pre><code>install -file helloworld.cap -sdAID A000000018434D00 -nvCodeLimit 4000</code></pre>
+<h2 id="jcop-cards">JCOP cards</h2>
+<p>If you cannot authenticate to your card it might be not fused. In this case you need the transport key from the vendor. Execute the JCOP IDENTIFY command.</p>
+<p>select -aid A000000167413000FF Offset 14 (decimal) of the response has the pre-personalized state. 00h is not fused (not personalized), 01h is fused.</p>
+<h2 id="cyberflex-cards">CyberFlex cards</h2>
+<p>For the Cyberflex you also need the CAP transformer (I believe this is a kind of obfuscator) which you must apply to the CAP file. Download it from http://www.trusted-logic.fr/down.php and use it.</p>
+<h1 id="bugs">BUGS</h1>
+<dl>
+<dt>JCOP 10</dt>
+<dd><p>install_for_load fails for unknown reason, so nothing can be installed.</p>
+</dd>
+</dl>
+<p>Some cards are not supporting the GET DATA command. This command is used by GPShell for retrieving the secure channel parameters. So you have to pass -scp 2 -scpimpl 0x15 to open_sc command.</p>
+<h1 id="author">AUTHOR</h1>
+<p>Karsten Ohme <em>k_o_<span class="citation" data-cites="users.sourceforge.net">@users.sourceforge.net</span></em> Snit Mo <em>snitmo@gmail.com</em></p>
+<p>See the file <code>AUTHORS</code> for a complete list.</p>
+</body>
+</html>
