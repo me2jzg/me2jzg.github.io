@@ -1,0 +1,42 @@
+digraph "platform_util.h"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node8 [label="platform_util.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="aria.h",height=0.2,width=0.4,color="black",URL="$aria_8h.html",tooltip="ARIA block cipher. "];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="blowfish.h",height=0.2,width=0.4,color="black",URL="$blowfish_8h.html",tooltip="Blowfish block cipher. "];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="camellia.h",height=0.2,width=0.4,color="black",URL="$camellia_8h.html",tooltip="Camellia block cipher. "];
+  Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="cipher.h",height=0.2,width=0.4,color="black",URL="$cipher_8h.html",tooltip="This file contains an abstraction interface for use with the cipher primitives provided by the librar..."];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ccm.h",height=0.2,width=0.4,color="black",URL="$ccm_8h.html",tooltip="This file provides an API for the CCM authenticated encryption mode for block ciphers. "];
+  Node12 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="cmac.h",height=0.2,width=0.4,color="black",URL="$cmac_8h.html",tooltip="This file contains CMAC definitions and functions. "];
+  Node12 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="ssl_ciphersuites.h",height=0.2,width=0.4,color="black",URL="$ssl__ciphersuites_8h.html",tooltip="SSL Ciphersuites for mbed TLS. "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="ssl.h",height=0.2,width=0.4,color="black",URL="$ssl_8h.html",tooltip="SSL/TLS functions. "];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="debug.h",height=0.2,width=0.4,color="black",URL="$debug_8h.html",tooltip="Functions for controlling and providing debug output from the library. "];
+  Node16 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="net_sockets.h",height=0.2,width=0.4,color="black",URL="$net__sockets_8h.html",tooltip="Network sockets abstraction layer to integrate Mbed TLS into a BSD-style sockets API. "];
+  Node16 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="ssl_cache.h",height=0.2,width=0.4,color="black",URL="$ssl__cache_8h.html",tooltip="SSL session cache implementation. "];
+  Node16 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="ssl_cookie.h",height=0.2,width=0.4,color="black",URL="$ssl__cookie_8h.html",tooltip="DTLS cookie callbacks implementation. "];
+  Node16 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="ssl_ticket.h",height=0.2,width=0.4,color="black",URL="$ssl__ticket_8h.html",tooltip="TLS server ticket callbacks implementation. "];
+  Node12 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="gcm.h",height=0.2,width=0.4,color="black",URL="$gcm_8h.html",tooltip="This file contains GCM definitions and functions. "];
+  Node12 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="nist_kw.h",height=0.2,width=0.4,color="black",URL="$nist__kw_8h.html",tooltip="This file provides an API for key wrapping (KW) and key wrapping with padding (KWP) as defined in NIS..."];
+  Node12 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="oid.h",height=0.2,width=0.4,color="black",URL="$oid_8h.html",tooltip="Object Identifier (OID) database. "];
+  Node12 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="pkcs12.h",height=0.2,width=0.4,color="black",URL="$pkcs12_8h.html",tooltip="PKCS#12 Personal Information Exchange Syntax. "];
+  Node12 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
