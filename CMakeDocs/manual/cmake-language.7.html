@@ -1,25 +1,26 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>cmake-language(7) &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cmake-language(7) &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cmake-modules(7)" href="cmake-modules.7.html" />
-    <link rel="prev" title="Sublime Text 2" href="../generator/Sublime Text 2.html" />
+    <link rel="prev" title="Sublime Text 2" href="../generator/Sublime%20Text%202.html" />
   
  
 
@@ -34,7 +35,7 @@
           <a href="cmake-modules.7.html" title="cmake-modules(7)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../generator/Sublime Text 2.html" title="Sublime Text 2"
+          <a href="../generator/Sublime%20Text%202.html" title="Sublime Text 2"
              accesskey="P">previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -44,9 +45,10 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
- 
+
+        <li class="nav-item nav-item-this"><a href="">cmake-language(7)</a></li> 
       </ul>
     </div>  
 
@@ -107,7 +109,7 @@
 </div>
 <div class="section" id="organization">
 <h2><a class="toc-backref" href="#id10">Organization</a><a class="headerlink" href="#organization" title="Permalink to this headline">¶</a></h2>
-<p>CMake input files are written in the “CMake Language” in source files
+<p>CMake input files are written in the &quot;CMake Language&quot; in source files
 named <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> or ending in a <code class="docutils literal notranslate"><span class="pre">.cmake</span></code> file name extension.</p>
 <p>CMake Language source files in a project are organized into:</p>
 <ul class="simple">
@@ -169,10 +171,10 @@ Furthermore, CMake 3.0 and above allow a leading UTF-8
 <a class="reference internal" href="#command-invocations">Command Invocations</a> separated by newlines and optionally
 spaces and <a class="reference internal" href="#comments">Comments</a>:</p>
 <pre>
-<strong id="grammar-token-file">file        </strong> ::=  <a class="reference internal" href="#grammar-token-file-element"><code class="xref docutils literal notranslate"><span class="pre">file_element</span></code></a>*
-<strong id="grammar-token-file-element">file_element</strong> ::=  <a class="reference internal" href="#grammar-token-command-invocation"><code class="xref docutils literal notranslate"><span class="pre">command_invocation</span></code></a> <a class="reference internal" href="#grammar-token-line-ending"><code class="xref docutils literal notranslate"><span class="pre">line_ending</span></code></a> |
-                  (<a class="reference internal" href="#grammar-token-bracket-comment"><code class="xref docutils literal notranslate"><span class="pre">bracket_comment</span></code></a>|<a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a>)* <a class="reference internal" href="#grammar-token-line-ending"><code class="xref docutils literal notranslate"><span class="pre">line_ending</span></code></a>
-<strong id="grammar-token-line-ending">line_ending </strong> ::=  <a class="reference internal" href="#grammar-token-line-comment"><code class="xref docutils literal notranslate"><span class="pre">line_comment</span></code></a>? <a class="reference internal" href="#grammar-token-newline"><code class="xref docutils literal notranslate"><span class="pre">newline</span></code></a>
+<strong id="grammar-token-file">file        </strong> ::=  <a class="reference internal" href="#grammar-token-file_element"><code class="xref docutils literal notranslate"><span class="pre">file_element</span></code></a>*
+<strong id="grammar-token-file_element"><span id="grammar-token-file-element"></span>file_element</strong> ::=  <a class="reference internal" href="#grammar-token-command_invocation"><code class="xref docutils literal notranslate"><span class="pre">command_invocation</span></code></a> <a class="reference internal" href="#grammar-token-line_ending"><code class="xref docutils literal notranslate"><span class="pre">line_ending</span></code></a> |
+                  (<a class="reference internal" href="#grammar-token-bracket_comment"><code class="xref docutils literal notranslate"><span class="pre">bracket_comment</span></code></a>|<a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a>)* <a class="reference internal" href="#grammar-token-line_ending"><code class="xref docutils literal notranslate"><span class="pre">line_ending</span></code></a>
+<strong id="grammar-token-line_ending"><span id="grammar-token-line-ending"></span>line_ending </strong> ::=  <a class="reference internal" href="#grammar-token-line_comment"><code class="xref docutils literal notranslate"><span class="pre">line_comment</span></code></a>? <a class="reference internal" href="#grammar-token-newline"><code class="xref docutils literal notranslate"><span class="pre">newline</span></code></a>
 <strong id="grammar-token-space">space       </strong> ::=  &lt;match '[ \t]+'&gt;
 <strong id="grammar-token-newline">newline     </strong> ::=  &lt;match '\n'&gt;
 </pre>
@@ -184,12 +186,12 @@ a <a class="reference internal" href="#bracket-comment">Bracket Comment</a> can 
 <p>A <em>command invocation</em> is a name followed by paren-enclosed arguments
 separated by whitespace:</p>
 <pre>
-<strong id="grammar-token-command-invocation">command_invocation </strong> ::=  <a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a>* <a class="reference internal" href="#grammar-token-identifier"><code class="xref docutils literal notranslate"><span class="pre">identifier</span></code></a> <a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a>* '(' <a class="reference internal" href="#grammar-token-arguments"><code class="xref docutils literal notranslate"><span class="pre">arguments</span></code></a> ')'
+<strong id="grammar-token-command_invocation"><span id="grammar-token-command-invocation"></span>command_invocation </strong> ::=  <a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a>* <a class="reference internal" href="#grammar-token-identifier"><code class="xref docutils literal notranslate"><span class="pre">identifier</span></code></a> <a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a>* '(' <a class="reference internal" href="#grammar-token-arguments"><code class="xref docutils literal notranslate"><span class="pre">arguments</span></code></a> ')'
 <strong id="grammar-token-identifier">identifier         </strong> ::=  &lt;match '[A-Za-z_][A-Za-z0-9_]*'&gt;
-<strong id="grammar-token-arguments">arguments          </strong> ::=  <a class="reference internal" href="#grammar-token-argument"><code class="xref docutils literal notranslate"><span class="pre">argument</span></code></a>? <a class="reference internal" href="#grammar-token-separated-arguments"><code class="xref docutils literal notranslate"><span class="pre">separated_arguments</span></code></a>*
-<strong id="grammar-token-separated-arguments">separated_arguments</strong> ::=  <a class="reference internal" href="#grammar-token-separation"><code class="xref docutils literal notranslate"><span class="pre">separation</span></code></a>+ <a class="reference internal" href="#grammar-token-argument"><code class="xref docutils literal notranslate"><span class="pre">argument</span></code></a>? |
+<strong id="grammar-token-arguments">arguments          </strong> ::=  <a class="reference internal" href="#grammar-token-argument"><code class="xref docutils literal notranslate"><span class="pre">argument</span></code></a>? <a class="reference internal" href="#grammar-token-separated_arguments"><code class="xref docutils literal notranslate"><span class="pre">separated_arguments</span></code></a>*
+<strong id="grammar-token-separated_arguments"><span id="grammar-token-separated-arguments"></span>separated_arguments</strong> ::=  <a class="reference internal" href="#grammar-token-separation"><code class="xref docutils literal notranslate"><span class="pre">separation</span></code></a>+ <a class="reference internal" href="#grammar-token-argument"><code class="xref docutils literal notranslate"><span class="pre">argument</span></code></a>? |
                          <a class="reference internal" href="#grammar-token-separation"><code class="xref docutils literal notranslate"><span class="pre">separation</span></code></a>* '(' <a class="reference internal" href="#grammar-token-arguments"><code class="xref docutils literal notranslate"><span class="pre">arguments</span></code></a> ')'
-<strong id="grammar-token-separation">separation         </strong> ::=  <a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a> | <a class="reference internal" href="#grammar-token-line-ending"><code class="xref docutils literal notranslate"><span class="pre">line_ending</span></code></a>
+<strong id="grammar-token-separation">separation         </strong> ::=  <a class="reference internal" href="#grammar-token-space"><code class="xref docutils literal notranslate"><span class="pre">space</span></code></a> | <a class="reference internal" href="#grammar-token-line_ending"><code class="xref docutils literal notranslate"><span class="pre">line_ending</span></code></a>
 </pre>
 <p>For example:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">add_executable(</span><span class="nb">hello</span><span class="w"> </span><span class="nb">world.c</span><span class="nf">)</span><span class="w"></span>
@@ -218,19 +220,19 @@ higher accept such code but produce a warning.</p>
 <h3><a class="toc-backref" href="#id18">Command Arguments</a><a class="headerlink" href="#command-arguments" title="Permalink to this headline">¶</a></h3>
 <p>There are three types of arguments within <a class="reference internal" href="#command-invocations">Command Invocations</a>:</p>
 <pre>
-<strong id="grammar-token-argument">argument</strong> ::=  <a class="reference internal" href="#grammar-token-bracket-argument"><code class="xref docutils literal notranslate"><span class="pre">bracket_argument</span></code></a> | <a class="reference internal" href="#grammar-token-quoted-argument"><code class="xref docutils literal notranslate"><span class="pre">quoted_argument</span></code></a> | <a class="reference internal" href="#grammar-token-unquoted-argument"><code class="xref docutils literal notranslate"><span class="pre">unquoted_argument</span></code></a>
+<strong id="grammar-token-argument">argument</strong> ::=  <a class="reference internal" href="#grammar-token-bracket_argument"><code class="xref docutils literal notranslate"><span class="pre">bracket_argument</span></code></a> | <a class="reference internal" href="#grammar-token-quoted_argument"><code class="xref docutils literal notranslate"><span class="pre">quoted_argument</span></code></a> | <a class="reference internal" href="#grammar-token-unquoted_argument"><code class="xref docutils literal notranslate"><span class="pre">unquoted_argument</span></code></a>
 </pre>
 <div class="section" id="bracket-argument">
 <span id="id2"></span><h4><a class="toc-backref" href="#id19">Bracket Argument</a><a class="headerlink" href="#bracket-argument" title="Permalink to this headline">¶</a></h4>
 <p>A <em>bracket argument</em>, inspired by <a class="reference external" href="http://www.lua.org/">Lua</a> long bracket syntax,
-encloses content between opening and closing “brackets” of the
+encloses content between opening and closing &quot;brackets&quot; of the
 same length:</p>
 <pre>
-<strong id="grammar-token-bracket-argument">bracket_argument</strong> ::=  <a class="reference internal" href="#grammar-token-bracket-open"><code class="xref docutils literal notranslate"><span class="pre">bracket_open</span></code></a> <a class="reference internal" href="#grammar-token-bracket-content"><code class="xref docutils literal notranslate"><span class="pre">bracket_content</span></code></a> <a class="reference internal" href="#grammar-token-bracket-close"><code class="xref docutils literal notranslate"><span class="pre">bracket_close</span></code></a>
-<strong id="grammar-token-bracket-open">bracket_open    </strong> ::=  '[' '='* '['
-<strong id="grammar-token-bracket-content">bracket_content </strong> ::=  &lt;any text not containing a <a class="reference internal" href="#grammar-token-bracket-close"><code class="xref docutils literal notranslate"><span class="pre">bracket_close</span></code></a> with
-                       the same number of '=' as the <a class="reference internal" href="#grammar-token-bracket-open"><code class="xref docutils literal notranslate"><span class="pre">bracket_open</span></code></a>&gt;
-<strong id="grammar-token-bracket-close">bracket_close   </strong> ::=  ']' '='* ']'
+<strong id="grammar-token-bracket_argument"><span id="grammar-token-bracket-argument"></span>bracket_argument</strong> ::=  <a class="reference internal" href="#grammar-token-bracket_open"><code class="xref docutils literal notranslate"><span class="pre">bracket_open</span></code></a> <a class="reference internal" href="#grammar-token-bracket_content"><code class="xref docutils literal notranslate"><span class="pre">bracket_content</span></code></a> <a class="reference internal" href="#grammar-token-bracket_close"><code class="xref docutils literal notranslate"><span class="pre">bracket_close</span></code></a>
+<strong id="grammar-token-bracket_open"><span id="grammar-token-bracket-open"></span>bracket_open    </strong> ::=  '[' '='* '['
+<strong id="grammar-token-bracket_content"><span id="grammar-token-bracket-content"></span>bracket_content </strong> ::=  &lt;any text not containing a <a class="reference internal" href="#grammar-token-bracket_close"><code class="xref docutils literal notranslate"><span class="pre">bracket_close</span></code></a> with
+                       the same number of '=' as the <a class="reference internal" href="#grammar-token-bracket_open"><code class="xref docutils literal notranslate"><span class="pre">bracket_open</span></code></a>&gt;
+<strong id="grammar-token-bracket_close"><span id="grammar-token-bracket-close"></span>bracket_close   </strong> ::=  ']' '='* ']'
 </pre>
 <p>An opening bracket is written <code class="docutils literal notranslate"><span class="pre">[</span></code> followed by zero or more <code class="docutils literal notranslate"><span class="pre">=</span></code> followed
 by <code class="docutils literal notranslate"><span class="pre">[</span></code>.  The corresponding closing bracket is written <code class="docutils literal notranslate"><span class="pre">]</span></code> followed
@@ -266,11 +268,11 @@ They interpret the opening bracket as the start of an
 <p>A <em>quoted argument</em> encloses content between opening and closing
 double-quote characters:</p>
 <pre>
-<strong id="grammar-token-quoted-argument">quoted_argument    </strong> ::=  '&quot;' <a class="reference internal" href="#grammar-token-quoted-element"><code class="xref docutils literal notranslate"><span class="pre">quoted_element</span></code></a>* '&quot;'
-<strong id="grammar-token-quoted-element">quoted_element     </strong> ::=  &lt;any character except '\' or '&quot;'&gt; |
-                         <a class="reference internal" href="#grammar-token-escape-sequence"><code class="xref docutils literal notranslate"><span class="pre">escape_sequence</span></code></a> |
-                         <a class="reference internal" href="#grammar-token-quoted-continuation"><code class="xref docutils literal notranslate"><span class="pre">quoted_continuation</span></code></a>
-<strong id="grammar-token-quoted-continuation">quoted_continuation</strong> ::=  '\' <a class="reference internal" href="#grammar-token-newline"><code class="xref docutils literal notranslate"><span class="pre">newline</span></code></a>
+<strong id="grammar-token-quoted_argument"><span id="grammar-token-quoted-argument"></span>quoted_argument    </strong> ::=  '&quot;' <a class="reference internal" href="#grammar-token-quoted_element"><code class="xref docutils literal notranslate"><span class="pre">quoted_element</span></code></a>* '&quot;'
+<strong id="grammar-token-quoted_element"><span id="grammar-token-quoted-element"></span>quoted_element     </strong> ::=  &lt;any character except '\' or '&quot;'&gt; |
+                         <a class="reference internal" href="#grammar-token-escape_sequence"><code class="xref docutils literal notranslate"><span class="pre">escape_sequence</span></code></a> |
+                         <a class="reference internal" href="#grammar-token-quoted_continuation"><code class="xref docutils literal notranslate"><span class="pre">quoted_continuation</span></code></a>
+<strong id="grammar-token-quoted_continuation"><span id="grammar-token-quoted-continuation"></span>quoted_continuation</strong> ::=  '\' <a class="reference internal" href="#grammar-token-newline"><code class="xref docutils literal notranslate"><span class="pre">newline</span></code></a>
 </pre>
 <p>Quoted argument content consists of all text between opening and
 closing quotes.  Both <a class="reference internal" href="#escape-sequences">Escape Sequences</a> and <a class="reference internal" href="#variable-references">Variable References</a>
@@ -308,10 +310,10 @@ an odd number of <code class="docutils literal notranslate"><span class="pre">\<
 It may not contain any whitespace, <code class="docutils literal notranslate"><span class="pre">(</span></code>, <code class="docutils literal notranslate"><span class="pre">)</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">\</span></code>
 except when escaped by a backslash:</p>
 <pre>
-<strong id="grammar-token-unquoted-argument">unquoted_argument</strong> ::=  <a class="reference internal" href="#grammar-token-unquoted-element"><code class="xref docutils literal notranslate"><span class="pre">unquoted_element</span></code></a>+ | <a class="reference internal" href="#grammar-token-unquoted-legacy"><code class="xref docutils literal notranslate"><span class="pre">unquoted_legacy</span></code></a>
-<strong id="grammar-token-unquoted-element">unquoted_element </strong> ::=  &lt;any character except whitespace or one of '()#&quot;\'&gt; |
-                       <a class="reference internal" href="#grammar-token-escape-sequence"><code class="xref docutils literal notranslate"><span class="pre">escape_sequence</span></code></a>
-<strong id="grammar-token-unquoted-legacy">unquoted_legacy  </strong> ::=  &lt;see note in text&gt;
+<strong id="grammar-token-unquoted_argument"><span id="grammar-token-unquoted-argument"></span>unquoted_argument</strong> ::=  <a class="reference internal" href="#grammar-token-unquoted_element"><code class="xref docutils literal notranslate"><span class="pre">unquoted_element</span></code></a>+ | <a class="reference internal" href="#grammar-token-unquoted_legacy"><code class="xref docutils literal notranslate"><span class="pre">unquoted_legacy</span></code></a>
+<strong id="grammar-token-unquoted_element"><span id="grammar-token-unquoted-element"></span>unquoted_element </strong> ::=  &lt;any character except whitespace or one of '()#&quot;\'&gt; |
+                       <a class="reference internal" href="#grammar-token-escape_sequence"><code class="xref docutils literal notranslate"><span class="pre">escape_sequence</span></code></a>
+<strong id="grammar-token-unquoted_legacy"><span id="grammar-token-unquoted-legacy"></span>unquoted_legacy  </strong> ::=  &lt;see note in text&gt;
 </pre>
 <p>Unquoted argument content consists of all text in a contiguous block
 of allowed or escaped characters.  Both <a class="reference internal" href="#escape-sequences">Escape Sequences</a> and
@@ -346,7 +348,7 @@ They may instead be written as quoted arguments <code class="docutils literal no
 and do not undergo variable expansion.  They are treated as part
 of a single argument (rather than as separate <code class="docutils literal notranslate"><span class="pre">$</span></code>, <code class="docutils literal notranslate"><span class="pre">(</span></code>,
 <code class="docutils literal notranslate"><span class="pre">MAKEVAR</span></code>, and <code class="docutils literal notranslate"><span class="pre">)</span></code> arguments).</p>
-<p>The above “unquoted_legacy” production represents such arguments.
+<p>The above &quot;unquoted_legacy&quot; production represents such arguments.
 We do not recommend using legacy unquoted arguments in new code.
 Instead use a <a class="reference internal" href="#quoted-argument">Quoted Argument</a> or a <a class="reference internal" href="#bracket-argument">Bracket Argument</a> to
 represent the content.</p>
@@ -357,10 +359,10 @@ represent the content.</p>
 <span id="id5"></span><h3><a class="toc-backref" href="#id22">Escape Sequences</a><a class="headerlink" href="#escape-sequences" title="Permalink to this headline">¶</a></h3>
 <p>An <em>escape sequence</em> is a <code class="docutils literal notranslate"><span class="pre">\</span></code> followed by one character:</p>
 <pre>
-<strong id="grammar-token-escape-sequence">escape_sequence </strong> ::=  <a class="reference internal" href="#grammar-token-escape-identity"><code class="xref docutils literal notranslate"><span class="pre">escape_identity</span></code></a> | <a class="reference internal" href="#grammar-token-escape-encoded"><code class="xref docutils literal notranslate"><span class="pre">escape_encoded</span></code></a> | <a class="reference internal" href="#grammar-token-escape-semicolon"><code class="xref docutils literal notranslate"><span class="pre">escape_semicolon</span></code></a>
-<strong id="grammar-token-escape-identity">escape_identity </strong> ::=  '\' &lt;match '[^A-Za-z0-9;]'&gt;
-<strong id="grammar-token-escape-encoded">escape_encoded  </strong> ::=  '\t' | '\r' | '\n'
-<strong id="grammar-token-escape-semicolon">escape_semicolon</strong> ::=  '\;'
+<strong id="grammar-token-escape_sequence"><span id="grammar-token-escape-sequence"></span>escape_sequence </strong> ::=  <a class="reference internal" href="#grammar-token-escape_identity"><code class="xref docutils literal notranslate"><span class="pre">escape_identity</span></code></a> | <a class="reference internal" href="#grammar-token-escape_encoded"><code class="xref docutils literal notranslate"><span class="pre">escape_encoded</span></code></a> | <a class="reference internal" href="#grammar-token-escape_semicolon"><code class="xref docutils literal notranslate"><span class="pre">escape_semicolon</span></code></a>
+<strong id="grammar-token-escape_identity"><span id="grammar-token-escape-identity"></span>escape_identity </strong> ::=  '\' &lt;match '[^A-Za-z0-9;]'&gt;
+<strong id="grammar-token-escape_encoded"><span id="grammar-token-escape-encoded"></span>escape_encoded  </strong> ::=  '\t' | '\r' | '\n'
+<strong id="grammar-token-escape_semicolon"><span id="grammar-token-escape-semicolon"></span>escape_semicolon</strong> ::=  '\;'
 </pre>
 <p>A <code class="docutils literal notranslate"><span class="pre">\</span></code> followed by a non-alphanumeric character simply encodes the literal
 character without interpreting it as syntax.  A <code class="docutils literal notranslate"><span class="pre">\t</span></code>, <code class="docutils literal notranslate"><span class="pre">\r</span></code>, or <code class="docutils literal notranslate"><span class="pre">\n</span></code>
@@ -404,10 +406,10 @@ as part of an <a class="reference internal" href="#unquoted-argument">Unquoted A
 comments: a <a class="reference internal" href="#bracket-comment">Bracket Comment</a> and a <a class="reference internal" href="#line-comment">Line Comment</a>.</p>
 <div class="section" id="bracket-comment">
 <span id="id7"></span><h4><a class="toc-backref" href="#id25">Bracket Comment</a><a class="headerlink" href="#bracket-comment" title="Permalink to this headline">¶</a></h4>
-<p>A <code class="docutils literal notranslate"><span class="pre">#</span></code> immediately followed by a <a class="reference internal" href="#grammar-token-bracket-open"><code class="xref std std-token docutils literal notranslate"><span class="pre">bracket_open</span></code></a> forms a
+<p>A <code class="docutils literal notranslate"><span class="pre">#</span></code> immediately followed by a <a class="reference internal" href="#grammar-token-bracket_open"><code class="xref std std-token docutils literal notranslate"><span class="pre">bracket_open</span></code></a> forms a
 <em>bracket comment</em> consisting of the entire bracket enclosure:</p>
 <pre>
-<strong id="grammar-token-bracket-comment">bracket_comment</strong> ::=  '#' <a class="reference internal" href="#grammar-token-bracket-argument"><code class="xref docutils literal notranslate"><span class="pre">bracket_argument</span></code></a>
+<strong id="grammar-token-bracket_comment"><span id="grammar-token-bracket-comment"></span>bracket_comment</strong> ::=  '#' <a class="reference internal" href="#grammar-token-bracket_argument"><code class="xref docutils literal notranslate"><span class="pre">bracket_argument</span></code></a>
 </pre>
 <p>For example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#[[This is a bracket comment.
@@ -423,10 +425,10 @@ They interpret the opening <code class="docutils literal notranslate"><span clas
 </div>
 <div class="section" id="line-comment">
 <span id="id8"></span><h4><a class="toc-backref" href="#id26">Line Comment</a><a class="headerlink" href="#line-comment" title="Permalink to this headline">¶</a></h4>
-<p>A <code class="docutils literal notranslate"><span class="pre">#</span></code> not immediately followed by a <a class="reference internal" href="#grammar-token-bracket-open"><code class="xref std std-token docutils literal notranslate"><span class="pre">bracket_open</span></code></a> forms a
+<p>A <code class="docutils literal notranslate"><span class="pre">#</span></code> not immediately followed by a <a class="reference internal" href="#grammar-token-bracket_open"><code class="xref std std-token docutils literal notranslate"><span class="pre">bracket_open</span></code></a> forms a
 <em>line comment</em> that runs until the end of the line:</p>
 <pre>
-<strong id="grammar-token-line-comment">line_comment</strong> ::=  '#' &lt;any text not starting in a <a class="reference internal" href="#grammar-token-bracket-open"><code class="xref docutils literal notranslate"><span class="pre">bracket_open</span></code></a>
+<strong id="grammar-token-line_comment"><span id="grammar-token-line-comment"></span>line_comment</strong> ::=  '#' &lt;any text not starting in a <a class="reference internal" href="#grammar-token-bracket_open"><code class="xref docutils literal notranslate"><span class="pre">bracket_open</span></code></a>
                        and not containing a <a class="reference internal" href="#grammar-token-newline"><code class="xref docutils literal notranslate"><span class="pre">newline</span></code></a>&gt;
 </pre>
 <p>For example:</p>
@@ -472,12 +474,12 @@ that modify variables as well.
 Variable names are case-sensitive and may consist of almost
 any text, but we recommend sticking to names consisting only
 of alphanumeric characters plus <code class="docutils literal notranslate"><span class="pre">_</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
-<p>Variables have dynamic scope.  Each variable “set” or “unset”
+<p>Variables have dynamic scope.  Each variable &quot;set&quot; or &quot;unset&quot;
 creates a binding in the current scope:</p>
 <dl>
 <dt>Function Scope</dt><dd><p><a class="reference internal" href="#command-definitions">Command Definitions</a> created by the <span class="target" id="index-1-command:function"></span><a class="reference internal" href="../command/function.html#command:function" title="function"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">function()</span></code></a> command
 create commands that, when invoked, process the recorded commands
-in a new variable binding scope.  A variable “set” or “unset”
+in a new variable binding scope.  A variable &quot;set&quot; or &quot;unset&quot;
 binds in this scope and is visible for the current function and
 any nested calls within it, but not after the function returns.</p>
 </dd>
@@ -486,11 +488,11 @@ bindings.  Before processing the <code class="docutils literal notranslate"><spa
 directory, CMake copies all variable bindings currently defined
 in the parent directory, if any, to initialize the new directory
 scope.  CMake <a class="reference internal" href="#scripts">Scripts</a>, when processed with <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">-P</span></code>, bind
-variables in one “directory” scope.</p>
-<p>A variable “set” or “unset” not inside a function call binds
+variables in one &quot;directory&quot; scope.</p>
+<p>A variable &quot;set&quot; or &quot;unset&quot; not inside a function call binds
 to the current directory scope.</p>
 </dd>
-<dt>Persistent Cache</dt><dd><p>CMake stores a separate set of “cache” variables, or “cache entries”,
+<dt>Persistent Cache</dt><dd><p>CMake stores a separate set of &quot;cache&quot; variables, or &quot;cache entries&quot;,
 whose values persist across multiple runs within a project build
 tree.  Cache entries have an isolated binding scope modified only
 by explicit request, such as by the <code class="docutils literal notranslate"><span class="pre">CACHE</span></code> option of the
@@ -500,7 +502,7 @@ by explicit request, such as by the <code class="docutils literal notranslate"><
 <p>When evaluating <a class="reference internal" href="#variable-references">Variable References</a>, CMake first searches the
 function call stack, if any, for a binding and then falls back
 to the binding in the current directory scope, if any.  If a
-“set” binding is found, its value is used.  If an “unset” binding
+&quot;set&quot; binding is found, its value is used.  If an &quot;unset&quot; binding
 is found, or no binding is found, CMake then searches for a
 cache entry.  If a cache entry is found, its value is used.
 Otherwise, the variable reference evaluates to an empty string.
@@ -569,6 +571,7 @@ in list elements, thus flattening nested lists:</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -616,7 +619,7 @@ in list elements, thus flattening nested lists:</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../generator/Sublime Text 2.html"
+  <p class="topless"><a href="../generator/Sublime%20Text%202.html"
                         title="previous chapter">Sublime Text 2</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="cmake-modules.7.html"
@@ -637,7 +640,7 @@ in list elements, thus flattening nested lists:</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -652,7 +655,7 @@ in list elements, thus flattening nested lists:</p>
           <a href="cmake-modules.7.html" title="cmake-modules(7)"
              >next</a> |</li>
         <li class="right" >
-          <a href="../generator/Sublime Text 2.html" title="Sublime Text 2"
+          <a href="../generator/Sublime%20Text%202.html" title="Sublime Text 2"
              >previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -662,14 +665,15 @@ in list elements, thus flattening nested lists:</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
- 
+
+        <li class="nav-item nav-item-this"><a href="">cmake-language(7)</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CheckPIESupported &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CheckPIESupported &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CheckPIESupported</a></li> 
       </ul>
     </div>  
 
@@ -58,11 +60,14 @@
             
   <div class="section" id="checkpiesupported">
 <span id="module:CheckPIESupported"></span><h1>CheckPIESupported<a class="headerlink" href="#checkpiesupported" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.14.</span></p>
+</div>
 <p>Check whether the linker supports Position Independent Code (PIE) or No
 Position Independent Code (NO_PIE) for executables.
 Use this to ensure that the <span class="target" id="index-0-prop_tgt:POSITION_INDEPENDENT_CODE"></span><a class="reference internal" href="../prop_tgt/POSITION_INDEPENDENT_CODE.html#prop_tgt:POSITION_INDEPENDENT_CODE" title="POSITION_INDEPENDENT_CODE"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">POSITION_INDEPENDENT_CODE</span></code></a> target
 property for executables will be honored at link time.</p>
-<dl class="command">
+<dl class="cmake command">
 <dt id="command:check_pie_supported">
 <code class="sig-name descname">check_pie_supported</code><a class="headerlink" href="#command:check_pie_supported" title="Permalink to this definition">¶</a></dt>
 <dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>check_pie_supported([OUTPUT_VARIABLE &lt;output&gt;]
@@ -113,6 +118,7 @@ for details.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -149,7 +155,7 @@ for details.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -174,15 +180,16 @@ for details.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CheckPIESupported</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

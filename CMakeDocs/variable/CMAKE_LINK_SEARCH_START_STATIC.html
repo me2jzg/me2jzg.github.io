@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CMAKE_LINK_SEARCH_START_STATIC &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMAKE_LINK_SEARCH_START_STATIC &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" accesskey="U">cmake-variables(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" accesskey="U">cmake-variables(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMAKE_LINK_SEARCH_START_STATIC</a></li> 
       </ul>
     </div>  
 
@@ -58,6 +60,9 @@
             
   <div class="section" id="cmake-link-search-start-static">
 <span id="variable:CMAKE_LINK_SEARCH_START_STATIC"></span><h1>CMAKE_LINK_SEARCH_START_STATIC<a class="headerlink" href="#cmake-link-search-start-static" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.4.</span></p>
+</div>
 <p>Assume the linker looks for static libraries by default.</p>
 <p>Some linkers support switches such as <code class="docutils literal notranslate"><span class="pre">-Bstatic</span></code> and <code class="docutils literal notranslate"><span class="pre">-Bdynamic</span></code> to
 determine whether to use static or shared libraries for <code class="docutils literal notranslate"><span class="pre">-lXXX</span></code> options.
@@ -69,12 +74,13 @@ property switches the assumption to <code class="docutils literal notranslate"><
 when linking an executable statically (e.g.  with the GNU <code class="docutils literal notranslate"><span class="pre">-static</span></code>
 option).</p>
 <p>This variable is used to initialize the target property
-<span class="target" id="index-0-prop_tgt:LINK_SEARCH_START_STATIC"></span><a class="reference internal" href="../prop_tgt/LINK_SEARCH_START_STATIC.html#prop_tgt:LINK_SEARCH_START_STATIC" title="LINK_SEARCH_START_STATIC"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">LINK_SEARCH_START_STATIC</span></code></a> for all targets.  If set, it’s
+<span class="target" id="index-0-prop_tgt:LINK_SEARCH_START_STATIC"></span><a class="reference internal" href="../prop_tgt/LINK_SEARCH_START_STATIC.html#prop_tgt:LINK_SEARCH_START_STATIC" title="LINK_SEARCH_START_STATIC"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">LINK_SEARCH_START_STATIC</span></code></a> for all targets.  If set, its
 value is also used by the <span class="target" id="index-0-command:try_compile"></span><a class="reference internal" href="../command/try_compile.html#command:try_compile" title="try_compile"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">try_compile()</span></code></a> command.</p>
 <p>See also <span class="target" id="index-0-variable:CMAKE_LINK_SEARCH_END_STATIC"></span><a class="reference internal" href="CMAKE_LINK_SEARCH_END_STATIC.html#variable:CMAKE_LINK_SEARCH_END_STATIC" title="CMAKE_LINK_SEARCH_END_STATIC"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_LINK_SEARCH_END_STATIC</span></code></a>.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -102,7 +108,7 @@ value is also used by the <span class="target" id="index-0-command:try_compile">
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -127,15 +133,16 @@ value is also used by the <span class="target" id="index-0-command:try_compile">
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" >cmake-variables(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" >cmake-variables(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMAKE_LINK_SEARCH_START_STATIC</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

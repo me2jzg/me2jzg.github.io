@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>INSTALL_NAME_DIR &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSTALL_NAME_DIR &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" accesskey="U">cmake-properties(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" accesskey="U">cmake-properties(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">INSTALL_NAME_DIR</a></li> 
       </ul>
     </div>  
 
@@ -58,19 +60,22 @@
             
   <div class="section" id="install-name-dir">
 <span id="prop_tgt:INSTALL_NAME_DIR"></span><h1>INSTALL_NAME_DIR<a class="headerlink" href="#install-name-dir" title="Permalink to this headline">¶</a></h1>
-<p>macOS directory name for installed targets.</p>
+<p>Directory name for installed targets on Apple platforms.</p>
 <p><code class="docutils literal notranslate"><span class="pre">INSTALL_NAME_DIR</span></code> is a string specifying the directory portion of the
-“install_name” field of shared libraries on macOS to use in the
-installed targets.</p>
+&quot;install_name&quot; field of shared libraries on Apple platforms for
+installed targets.  When not set, the default directory used is determined
+by <span class="target" id="index-0-prop_tgt:MACOSX_RPATH"></span><a class="reference internal" href="MACOSX_RPATH.html#prop_tgt:MACOSX_RPATH" title="MACOSX_RPATH"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">MACOSX_RPATH</span></code></a>.  Policies <span class="target" id="index-0-policy:CMP0068"></span><a class="reference internal" href="../policy/CMP0068.html#policy:CMP0068" title="CMP0068"><code class="xref cmake cmake-policy docutils literal notranslate"><span class="pre">CMP0068</span></code></a> and <span class="target" id="index-0-policy:CMP0042"></span><a class="reference internal" href="../policy/CMP0042.html#policy:CMP0042" title="CMP0042"><code class="xref cmake cmake-policy docutils literal notranslate"><span class="pre">CMP0042</span></code></a>
+are also relevant.</p>
 <p>This property is initialized by the value of the variable
 <span class="target" id="index-0-variable:CMAKE_INSTALL_NAME_DIR"></span><a class="reference internal" href="../variable/CMAKE_INSTALL_NAME_DIR.html#variable:CMAKE_INSTALL_NAME_DIR" title="CMAKE_INSTALL_NAME_DIR"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_INSTALL_NAME_DIR</span></code></a> if it is set when a target is
 created.</p>
 <p>This property supports <span class="target" id="index-0-manual:cmake-generator-expressions(7)"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)" title="cmake-generator-expressions(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">generator</span> <span class="pre">expressions</span></code></a>.
-In particular, the <code class="docutils literal notranslate"><span class="pre">$&lt;INSTALL_PREFIX&gt;</span></code> generator expression can be used to set the
-directory relative to the install-time prefix.</p>
+In particular, the <span class="target" id="index-0-genex:INSTALL_PREFIX"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#genex:INSTALL_PREFIX" title="INSTALL_PREFIX"><code class="xref cmake cmake-genex docutils literal notranslate"><span class="pre">$&lt;INSTALL_PREFIX&gt;</span></code></a> generator expression can be
+used to set the directory relative to the install-time prefix.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -98,7 +103,7 @@ directory relative to the install-time prefix.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -123,15 +128,16 @@ directory relative to the install-time prefix.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" >cmake-properties(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" >cmake-properties(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">INSTALL_NAME_DIR</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

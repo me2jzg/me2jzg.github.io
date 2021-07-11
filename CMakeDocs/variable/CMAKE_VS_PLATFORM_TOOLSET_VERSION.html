@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CMAKE_VS_PLATFORM_TOOLSET_VERSION &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMAKE_VS_PLATFORM_TOOLSET_VERSION &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" accesskey="U">cmake-variables(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" accesskey="U">cmake-variables(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMAKE_VS_PLATFORM_TOOLSET_VERSION</a></li> 
       </ul>
     </div>  
 
@@ -58,6 +60,9 @@
             
   <div class="section" id="cmake-vs-platform-toolset-version">
 <span id="variable:CMAKE_VS_PLATFORM_TOOLSET_VERSION"></span><h1>CMAKE_VS_PLATFORM_TOOLSET_VERSION<a class="headerlink" href="#cmake-vs-platform-toolset-version" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.12.</span></p>
+</div>
 <p>Visual Studio Platform Toolset version.</p>
 <p>The <a class="reference internal" href="../manual/cmake-generators.7.html#visual-studio-generators"><span class="std std-ref">Visual Studio Generators</span></a> for VS 2017 and above allow to
 select minor versions of the same toolset. The toolset version number
@@ -65,14 +70,41 @@ may be specified by a field in <span class="target" id="index-0-variable:CMAKE_G
 the form <code class="docutils literal notranslate"><span class="pre">version=14.11</span></code>. If none is specified CMake will choose a default
 toolset. The value may be empty if no minor version was selected and the
 default is used.</p>
+<p>If the value is not empty, it is the version number that MSBuild uses in
+its <code class="docutils literal notranslate"><span class="pre">Microsoft.VCToolsVersion.*.props</span></code> file names.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.19.7: </span>VS 16.9's toolset may also be specified as <code class="docutils literal notranslate"><span class="pre">14.28.16.9</span></code> because
+VS 16.10 uses the file name <code class="docutils literal notranslate"><span class="pre">Microsoft.VCToolsVersion.14.28.16.9.props</span></code>.</p>
+</div>
+<div class="section" id="three-component-msvc-toolset-versions">
+<h2>Three-Component MSVC Toolset Versions<a class="headerlink" href="#three-component-msvc-toolset-versions" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.19.7.</span></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">version=</span></code> field may be given a three-component toolset version
+such as <code class="docutils literal notranslate"><span class="pre">14.28.29910</span></code>, and CMake will convert it to the name used by
+MSBuild <code class="docutils literal notranslate"><span class="pre">Microsoft.VCToolsVersion.*.props</span></code> files.  This is useful
+to distinguish between VS 16.8's <code class="docutils literal notranslate"><span class="pre">14.28.29333</span></code> toolset and VS 16.9's
+<code class="docutils literal notranslate"><span class="pre">14.28.29910</span></code> toolset.  It also matches <code class="docutils literal notranslate"><span class="pre">vcvarsall</span></code>'s <code class="docutils literal notranslate"><span class="pre">-vcvars_ver=</span></code>
+behavior.</p>
+</div>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CMAKE_VS_PLATFORM_TOOLSET_VERSION</a><ul>
+<li><a class="reference internal" href="#three-component-msvc-toolset-versions">Three-Component MSVC Toolset Versions</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE.html"
                         title="previous chapter">CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE</a></p>
@@ -95,7 +127,7 @@ default is used.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -120,15 +152,16 @@ default is used.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" >cmake-variables(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" >cmake-variables(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMAKE_VS_PLATFORM_TOOLSET_VERSION</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

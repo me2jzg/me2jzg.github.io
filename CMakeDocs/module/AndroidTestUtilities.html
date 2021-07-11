@@ -1,25 +1,26 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>AndroidTestUtilities &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AndroidTestUtilities &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="BundleUtilities" href="BundleUtilities.html" />
-    <link rel="prev" title="AddFileDependencies" href="AddFileDependencies.html" />
+    <link rel="prev" title="cmake-modules(7)" href="../manual/cmake-modules.7.html" />
   
  
 
@@ -34,7 +35,7 @@
           <a href="BundleUtilities.html" title="BundleUtilities"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="AddFileDependencies.html" title="AddFileDependencies"
+          <a href="../manual/cmake-modules.7.html" title="cmake-modules(7)"
              accesskey="P">previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AndroidTestUtilities</a></li> 
       </ul>
     </div>  
 
@@ -58,6 +60,9 @@
             
   <div class="section" id="androidtestutilities">
 <span id="module:AndroidTestUtilities"></span><h1>AndroidTestUtilities<a class="headerlink" href="#androidtestutilities" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.7.</span></p>
+</div>
 <p>Create a test that automatically loads specified data onto an Android device.</p>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
@@ -78,13 +83,13 @@ store.</p>
 <span class="w">  </span><span class="nf">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>At build time a test named “example_setup_test” will be created.  Run this test
+<p>At build time a test named &quot;example_setup_test&quot; will be created.  Run this test
 on the command line with <span class="target" id="index-0-manual:ctest(1)"></span><a class="reference internal" href="../manual/ctest.1.html#manual:ctest(1)" title="ctest(1)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">ctest(1)</span></code></a> to load the data onto the Android
 device.</p>
 </div>
 <div class="section" id="module-functions">
 <h2>Module Functions<a class="headerlink" href="#module-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="command">
+<dl class="cmake command">
 <dt id="command:android_add_test_data">
 <code class="sig-name descname">android_add_test_data</code><a class="headerlink" href="#command:android_add_test_data" title="Permalink to this definition">¶</a></dt>
 <dd><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">android_add_test_data(</span><span class="nv">&lt;test-name&gt;</span><span class="w"></span>
@@ -124,6 +129,7 @@ copied from the object store to the testing directory</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -139,8 +145,8 @@ copied from the object store to the testing directory</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="AddFileDependencies.html"
-                        title="previous chapter">AddFileDependencies</a></p>
+  <p class="topless"><a href="../manual/cmake-modules.7.html"
+                        title="previous chapter">cmake-modules(7)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="BundleUtilities.html"
                         title="next chapter">BundleUtilities</a></p>
@@ -160,7 +166,7 @@ copied from the object store to the testing directory</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -175,7 +181,7 @@ copied from the object store to the testing directory</p>
           <a href="BundleUtilities.html" title="BundleUtilities"
              >next</a> |</li>
         <li class="right" >
-          <a href="AddFileDependencies.html" title="AddFileDependencies"
+          <a href="../manual/cmake-modules.7.html" title="cmake-modules(7)"
              >previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -185,15 +191,16 @@ copied from the object store to the testing directory</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AndroidTestUtilities</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

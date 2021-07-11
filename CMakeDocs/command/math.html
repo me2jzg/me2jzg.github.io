@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>math &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>math &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" accesskey="U">cmake-commands(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" accesskey="U">cmake-commands(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">math</a></li> 
       </ul>
     </div>  
 
@@ -70,16 +72,20 @@ double quotation marks). An example is <code class="docutils literal notranslate
 Supported operators are <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>,
 <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">(...)</span></code>; they have the same meaning
 as in C code.</p>
-<p>Hexadecimal numbers are recognized when prefixed with <code class="docutils literal notranslate"><span class="pre">0x</span></code>, as in C code.</p>
-<p>The result is formatted according to the option <code class="docutils literal notranslate"><span class="pre">OUTPUT_FORMAT</span></code>,
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.13: </span>Hexadecimal numbers are recognized when prefixed with <code class="docutils literal notranslate"><span class="pre">0x</span></code>, as in C code.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.13: </span>The result is formatted according to the option <code class="docutils literal notranslate"><span class="pre">OUTPUT_FORMAT</span></code>,
 where <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code> is one of</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">HEXADECIMAL</span></code></dt><dd><p>Hexadecimal notation as in C code, i. e. starting with “0x”.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">HEXADECIMAL</span></code></dt><dd><p>Hexadecimal notation as in C code, i. e. starting with &quot;0x&quot;.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DECIMAL</span></code></dt><dd><p>Decimal notation. Which is also used if no <code class="docutils literal notranslate"><span class="pre">OUTPUT_FORMAT</span></code> option
 is specified.</p>
 </dd>
 </dl>
+</div>
 <p>For example</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">math(</span><span class="no">EXPR</span><span class="w"> </span><span class="nb">value</span><span class="w"> </span><span class="s">&quot;100 * 0xA&quot;</span><span class="w"> </span><span class="no">OUTPUT_FORMAT</span><span class="w"> </span><span class="no">DECIMAL</span><span class="nf">)</span><span class="w">      </span><span class="c"># value is set to &quot;1000&quot;</span>
 <span class="nf">math(</span><span class="no">EXPR</span><span class="w"> </span><span class="nb">value</span><span class="w"> </span><span class="s">&quot;100 * 0xA&quot;</span><span class="w"> </span><span class="no">OUTPUT_FORMAT</span><span class="w"> </span><span class="no">HEXADECIMAL</span><span class="nf">)</span><span class="w">  </span><span class="c"># value is set to &quot;0x3e8&quot;</span>
@@ -88,6 +94,7 @@ is specified.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -115,7 +122,7 @@ is specified.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -140,15 +147,16 @@ is specified.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" >cmake-commands(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" >cmake-commands(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">math</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

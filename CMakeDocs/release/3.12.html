@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CMake 3.12 Release Notes &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMake 3.12 Release Notes &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">CMake Release Notes</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">CMake Release Notes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMake 3.12 Release Notes</a></li> 
       </ul>
     </div>  
 
@@ -116,10 +118,10 @@ older of the running CMake version and the version specified by
 for which they have been updated and avoid explicit policy settings.</p></li>
 <li><p>The <span class="target" id="index-0-command:file"></span><a class="reference internal" href="../command/file.html#command:file" title="file"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">file(GLOB)</span></code></a> and <span class="target" id="index-1-command:file"></span><a class="reference internal" href="../command/file.html#command:file" title="file"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">file(GLOB_RECURSE)</span></code></a> commands
 learned a new flag <code class="docutils literal notranslate"><span class="pre">CONFIGURE_DEPENDS</span></code> which enables expression of
-build system dependency on globbed directory’s contents.</p></li>
+build system dependency on globbed directory's contents.</p></li>
 <li><p>The <span class="target" id="index-2-command:file"></span><a class="reference internal" href="../command/file.html#command:file" title="file"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">file(TOUCH)</span></code></a> and <span class="target" id="index-3-command:file"></span><a class="reference internal" href="../command/file.html#command:file" title="file"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">file(TOUCH_NOCREATE)</span></code></a> commands
 were added to expose <code class="docutils literal notranslate"><span class="pre">TOUCH</span></code> functionality without having to use
-CMake’s command-line tool mode with <span class="target" id="index-0-command:execute_process"></span><a class="reference internal" href="../command/execute_process.html#command:execute_process" title="execute_process"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">execute_process()</span></code></a>.</p></li>
+CMake's command-line tool mode with <span class="target" id="index-0-command:execute_process"></span><a class="reference internal" href="../command/execute_process.html#command:execute_process" title="execute_process"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">execute_process()</span></code></a>.</p></li>
 <li><p>The <span class="target" id="index-0-command:find_package"></span><a class="reference internal" href="../command/find_package.html#command:find_package" title="find_package"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_package()</span></code></a> command now searches prefixes specified by
 the <span class="target" id="index-0-variable:&lt;PackageName&gt;_ROOT"></span><a class="reference internal" href="../variable/PackageName_ROOT.html#variable:&lt;PackageName&gt;_ROOT" title="&lt;PackageName&gt;_ROOT"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">&lt;PackageName&gt;_ROOT</span></code></a> CMake variable and the
 <span class="target" id="index-0-envvar:&lt;PackageName&gt;_ROOT"></span><a class="reference internal" href="../envvar/PackageName_ROOT.html#envvar:&lt;PackageName&gt;_ROOT" title="&lt;PackageName&gt;_ROOT"><code class="xref cmake cmake-envvar docutils literal notranslate"><span class="pre">&lt;PackageName&gt;_ROOT</span></code></a> environment variable.  Package roots are
@@ -127,15 +129,15 @@ maintained as a stack so nested calls to all <code class="docutils literal notra
 find modules also search the roots as prefixes.
 See policy <span class="target" id="index-0-policy:CMP0074"></span><a class="reference internal" href="../policy/CMP0074.html#policy:CMP0074" title="CMP0074"><code class="xref cmake cmake-policy docutils literal notranslate"><span class="pre">CMP0074</span></code></a>.</p></li>
 <li><p>The <span class="target" id="index-0-command:install"></span><a class="reference internal" href="../command/install.html#command:install" title="install"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install()</span></code></a> command learned an optional <code class="docutils literal notranslate"><span class="pre">NAMELINK_COMPONENT</span></code>
-parameter, which allows you to change the component for a shared library’s
+parameter, which allows you to change the component for a shared library's
 namelink. If none is specified, the value of <code class="docutils literal notranslate"><span class="pre">COMPONENT</span></code> is used by
 default.</p></li>
 <li><p>The <span class="target" id="index-0-command:list"></span><a class="reference internal" href="../command/list.html#command:list" title="list"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">list()</span></code></a> command learned a <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> sub-command
-to concatenate list’s elements separated by a glue string.</p></li>
+to concatenate list's elements separated by a glue string.</p></li>
 <li><p>The <span class="target" id="index-1-command:list"></span><a class="reference internal" href="../command/list.html#command:list" title="list"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">list()</span></code></a> command learned a <code class="docutils literal notranslate"><span class="pre">SUBLIST</span></code> sub-command
 to get a sublist of the list.</p></li>
 <li><p>The <span class="target" id="index-2-command:list"></span><a class="reference internal" href="../command/list.html#command:list" title="list"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">list()</span></code></a> command learned a <code class="docutils literal notranslate"><span class="pre">TRANSFORM</span></code> sub-command
-to apply various string transformation to list’s elements.</p></li>
+to apply various string transformation to list's elements.</p></li>
 <li><p>The <span class="target" id="index-0-command:project"></span><a class="reference internal" href="../command/project.html#command:project" title="project"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">project()</span></code></a> command learned an optional <code class="docutils literal notranslate"><span class="pre">HOMEPAGE_URL</span></code>
 parameter which has the effect of setting variables like
 <span class="target" id="index-0-variable:PROJECT_HOMEPAGE_URL"></span><a class="reference internal" href="../variable/PROJECT_HOMEPAGE_URL.html#variable:PROJECT_HOMEPAGE_URL" title="PROJECT_HOMEPAGE_URL"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">PROJECT_HOMEPAGE_URL</span></code></a>, <span class="target" id="index-0-variable:&lt;PROJECT-NAME&gt;_HOMEPAGE_URL"></span><a class="reference internal" href="../variable/PROJECT-NAME_HOMEPAGE_URL.html#variable:&lt;PROJECT-NAME&gt;_HOMEPAGE_URL" title="&lt;PROJECT-NAME&gt;_HOMEPAGE_URL"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">&lt;PROJECT-NAME&gt;_HOMEPAGE_URL</span></code></a>
@@ -308,7 +310,7 @@ compilers.</p></li>
 <div class="section" id="deprecated-and-removed-features">
 <h2><a class="toc-backref" href="#id13">Deprecated and Removed Features</a><a class="headerlink" href="#deprecated-and-removed-features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>The <span class="target" id="index-0-generator:Visual Studio 8 2005"></span><a class="reference internal" href="../generator/Visual Studio 8 2005.html#generator:Visual Studio 8 2005" title="Visual Studio 8 2005"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">8</span> <span class="pre">2005</span></code></a> generator has been removed.</p></li>
+<li><p>The <span class="target" id="index-0-generator:Visual Studio 8 2005"></span><a class="reference internal" href="../generator/Visual%20Studio%208%202005.html#generator:Visual Studio 8 2005" title="Visual Studio 8 2005"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">8</span> <span class="pre">2005</span></code></a> generator has been removed.</p></li>
 <li><p>CMake no longer produces <code class="docutils literal notranslate"><span class="pre">&lt;tgt&gt;_LIB_DEPENDS</span></code> cache entries
 for library targets.  See policy <span class="target" id="index-0-policy:CMP0073"></span><a class="reference internal" href="../policy/CMP0073.html#policy:CMP0073" title="CMP0073"><code class="xref cmake cmake-policy docutils literal notranslate"><span class="pre">CMP0073</span></code></a>.</p></li>
 </ul>
@@ -346,6 +348,7 @@ Java modules to <code class="docutils literal notranslate"><span class="pre">&qu
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -395,7 +398,7 @@ Java modules to <code class="docutils literal notranslate"><span class="pre">&qu
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -420,15 +423,16 @@ Java modules to <code class="docutils literal notranslate"><span class="pre">&qu
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >CMake Release Notes</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >CMake Release Notes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMake 3.12 Release Notes</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

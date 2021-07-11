@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>FindCurses &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FindCurses &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FindCurses</a></li> 
       </ul>
     </div>  
 
@@ -62,14 +64,17 @@
 <div class="section" id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Permalink to this headline">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
+<dl>
 <dt><code class="docutils literal notranslate"><span class="pre">CURSES_FOUND</span></code></dt><dd><p>True if Curses is found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CURSES_INCLUDE_DIRS</span></code></dt><dd><p>The include directories needed to use Curses.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CURSES_LIBRARIES</span></code></dt><dd><p>The libraries needed to use Curses.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">CURSES_CFLAGS</span></code></dt><dd><p>Parameters which ought be given to C/C++ compilers when using Curses.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">CURSES_CFLAGS</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 3.16.</span></p>
+</div>
+<p>Parameters which ought be given to C/C++ compilers when using Curses.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CURSES_HAVE_CURSES_H</span></code></dt><dd><p>True if curses.h is available.</p>
 </dd>
@@ -81,9 +86,11 @@
 </dd>
 </dl>
 <p>Set <code class="docutils literal notranslate"><span class="pre">CURSES_NEED_NCURSES</span></code> to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> before the
-<code class="docutils literal notranslate"><span class="pre">find_package(Curses)</span></code> call if NCurses functionality is required.
-Set <code class="docutils literal notranslate"><span class="pre">CURSES_NEED_WIDE</span></code> to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> before the
+<code class="docutils literal notranslate"><span class="pre">find_package(Curses)</span></code> call if NCurses functionality is required.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.10: </span>Set <code class="docutils literal notranslate"><span class="pre">CURSES_NEED_WIDE</span></code> to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> before the
 <code class="docutils literal notranslate"><span class="pre">find_package(Curses)</span></code> call if unicode functionality is required.</p>
+</div>
 </div>
 <div class="section" id="backward-compatibility">
 <h2>Backward Compatibility<a class="headerlink" href="#backward-compatibility" title="Permalink to this headline">¶</a></h2>
@@ -98,6 +105,7 @@ Set <code class="docutils literal notranslate"><span class="pre">CURSES_NEED_WID
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -134,7 +142,7 @@ Set <code class="docutils literal notranslate"><span class="pre">CURSES_NEED_WID
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -159,15 +167,16 @@ Set <code class="docutils literal notranslate"><span class="pre">CURSES_NEED_WID
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FindCurses</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

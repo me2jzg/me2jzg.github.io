@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CPack PackageMaker Generator &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPack PackageMaker Generator &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" accesskey="U">cpack-generators(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" accesskey="U">cpack-generators(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CPack PackageMaker Generator</a></li> 
       </ul>
     </div>  
 
@@ -67,7 +69,7 @@ This CPack generator will be removed in a future version of CPack.</p>
 <h2>Variables specific to CPack PackageMaker generator<a class="headerlink" href="#variables-specific-to-cpack-packagemaker-generator" title="Permalink to this headline">¶</a></h2>
 <p>The following variable is specific to installers built on Mac
 macOS using PackageMaker:</p>
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_OSX_PACKAGE_VERSION">
 <code class="sig-name descname">CPACK_OSX_PACKAGE_VERSION</code><a class="headerlink" href="#variable:CPACK_OSX_PACKAGE_VERSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>The version of macOS that the resulting PackageMaker archive should be
@@ -78,46 +80,53 @@ components on-the-fly for macOS 10.5 or newer. If left blank, this value
 will be set to the minimum version of macOS that supports the requested
 features. Set this variable to some value (e.g., 10.4) only if you want to
 guarantee that your installer will work on that version of macOS, and
-don’t mind missing extra features available in the installer shipping with
+don't mind missing extra features available in the installer shipping with
 later versions of macOS.</p>
 </dd></dl>
 
-<dl class="variable">
+<div class="section" id="background-image">
+<h3>Background Image<a class="headerlink" href="#background-image" title="Permalink to this headline">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.17.</span></p>
+</div>
+<p>This group of variables controls the background image of the generated
+installer.</p>
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a background to Distribtion XML if specified. The value contains the
+<dd><p>Adds a background to Distribution XML if specified. The value contains the
 path to image in <code class="docutils literal notranslate"><span class="pre">Resources</span></code> directory.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_ALIGNMENT">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_ALIGNMENT</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_ALIGNMENT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds an <code class="docutils literal notranslate"><span class="pre">alignment</span></code> attribute to the background in Distribution XML.
 Refer to Apple documentation for valid values.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_SCALING">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_SCALING</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_SCALING" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">scaling</span></code> attribute to the background in Distribution XML.
 Refer to Apple documentation for valid values.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_MIME_TYPE">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_MIME_TYPE</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_MIME_TYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">mime-type</span></code> attribute to the background in Distribution XML.
 The option contains MIME type of an image.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_UTI">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_UTI</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_UTI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds an <code class="docutils literal notranslate"><span class="pre">uti</span></code> attribute to the background in Distribution XML.
 The option contains UTI type of an image.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a background for the Dark Aqua theme to Distribution XML if
@@ -125,28 +134,28 @@ specified. The value contains the path to image in <code class="docutils literal
 directory.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_ALIGNMENT">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_ALIGNMENT</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_ALIGNMENT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the same as <span class="target" id="index-0-variable:CPACK_PACKAGEMAKER_BACKGROUND_ALIGNMENT"></span><a class="reference internal" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_ALIGNMENT" title="CPACK_PACKAGEMAKER_BACKGROUND_ALIGNMENT"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CPACK_PACKAGEMAKER_BACKGROUND_ALIGNMENT</span></code></a> option,
 but for the dark theme.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_SCALING">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_SCALING</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_SCALING" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the same as <span class="target" id="index-0-variable:CPACK_PACKAGEMAKER_BACKGROUND_SCALING"></span><a class="reference internal" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_SCALING" title="CPACK_PACKAGEMAKER_BACKGROUND_SCALING"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CPACK_PACKAGEMAKER_BACKGROUND_SCALING</span></code></a> option,
 but for the dark theme.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_MIME_TYPE">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_MIME_TYPE</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_MIME_TYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the same as <span class="target" id="index-0-variable:CPACK_PACKAGEMAKER_BACKGROUND_MIME_TYPE"></span><a class="reference internal" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_MIME_TYPE" title="CPACK_PACKAGEMAKER_BACKGROUND_MIME_TYPE"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CPACK_PACKAGEMAKER_BACKGROUND_MIME_TYPE</span></code></a> option,
 but for the dark theme.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_UTI">
 <code class="sig-name descname">CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_UTI</code><a class="headerlink" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_DARKAQUA_UTI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the same as <span class="target" id="index-0-variable:CPACK_PACKAGEMAKER_BACKGROUND_UTI"></span><a class="reference internal" href="#variable:CPACK_PACKAGEMAKER_BACKGROUND_UTI" title="CPACK_PACKAGEMAKER_BACKGROUND_UTI"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CPACK_PACKAGEMAKER_BACKGROUND_UTI</span></code></a> option,
@@ -155,8 +164,10 @@ but for the dark theme.</p>
 
 </div>
 </div>
+</div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -165,7 +176,10 @@ but for the dark theme.</p>
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">CPack PackageMaker Generator</a><ul>
-<li><a class="reference internal" href="#variables-specific-to-cpack-packagemaker-generator">Variables specific to CPack PackageMaker generator</a></li>
+<li><a class="reference internal" href="#variables-specific-to-cpack-packagemaker-generator">Variables specific to CPack PackageMaker generator</a><ul>
+<li><a class="reference internal" href="#background-image">Background Image</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -192,7 +206,7 @@ but for the dark theme.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -217,15 +231,16 @@ but for the dark theme.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" >cpack-generators(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" >cpack-generators(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CPack PackageMaker Generator</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>foreach &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>foreach &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" accesskey="U">cmake-commands(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" accesskey="U">cmake-commands(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">foreach</a></li> 
       </ul>
     </div>  
 
@@ -82,7 +84,7 @@ repeat of the argument of the opening
 </pre></div>
 </div>
 <p>In this variant, <code class="docutils literal notranslate"><span class="pre">foreach</span></code> iterates over the numbers
-0, 1, … up to (and including) the nonnegative integer <code class="docutils literal notranslate"><span class="pre">&lt;stop&gt;</span></code>.</p>
+0, 1, ... up to (and including) the nonnegative integer <code class="docutils literal notranslate"><span class="pre">&lt;stop&gt;</span></code>.</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">foreach(</span><span class="nv">&lt;loop_var&gt;</span><span class="w"> </span><span class="no">RANGE</span><span class="w"> </span><span class="nv">&lt;start&gt;</span><span class="w"> </span><span class="nv">&lt;stop&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;step&gt;</span><span class="p">]</span><span class="nf">)</span><span class="w"></span>
 </pre></div>
 </div>
@@ -129,6 +131,9 @@ processed:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">foreach(</span><span class="nv">&lt;loop_var&gt;...</span><span class="w"> </span><span class="no">IN</span><span class="w"> </span><span class="no">ZIP_LISTS</span><span class="w"> </span><span class="nv">&lt;lists&gt;</span><span class="nf">)</span><span class="w"></span>
 </pre></div>
 </div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.17.</span></p>
+</div>
 <p>In this variant, <code class="docutils literal notranslate"><span class="pre">&lt;lists&gt;</span></code> is a whitespace or semicolon
 separated list of list-valued variables. The <code class="docutils literal notranslate"><span class="pre">foreach</span></code>
 command iterates over each list simultaneously setting the
@@ -168,6 +173,7 @@ variable is not defined for the current iteration.</p></li>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -195,7 +201,7 @@ variable is not defined for the current iteration.</p></li>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -220,15 +226,16 @@ variable is not defined for the current iteration.</p></li>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" >cmake-commands(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-commands.7.html" >cmake-commands(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">foreach</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

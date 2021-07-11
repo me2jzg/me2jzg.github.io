@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CPack Bundle Generator &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPack Bundle Generator &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" accesskey="U">cpack-generators(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" accesskey="U">cpack-generators(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CPack Bundle Generator</a></li> 
       </ul>
     </div>  
 
@@ -64,14 +66,14 @@
 <p>Installers built on macOS using the Bundle generator use the
 aforementioned DragNDrop (<code class="docutils literal notranslate"><span class="pre">CPACK_DMG_xxx</span></code>) variables, plus the following
 Bundle-specific parameters (<code class="docutils literal notranslate"><span class="pre">CPACK_BUNDLE_xxx</span></code>).</p>
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_NAME">
 <code class="sig-name descname">CPACK_BUNDLE_NAME</code><a class="headerlink" href="#variable:CPACK_BUNDLE_NAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>The name of the generated bundle. This appears in the macOS Finder as the
 bundle name. Required.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_PLIST">
 <code class="sig-name descname">CPACK_BUNDLE_PLIST</code><a class="headerlink" href="#variable:CPACK_BUNDLE_PLIST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to an macOS Property List (<code class="docutils literal notranslate"><span class="pre">.plist</span></code>) file that will be used
@@ -80,7 +82,7 @@ assumes that the caller has generated or specified their own <code class="docuti
 file. Required.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_ICON">
 <code class="sig-name descname">CPACK_BUNDLE_ICON</code><a class="headerlink" href="#variable:CPACK_BUNDLE_ICON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to an macOS icon file that will be used as the icon for the generated
@@ -88,7 +90,7 @@ bundle. This is the icon that appears in the macOS Finder for the bundle, and
 in the macOS dock when the bundle is opened. Required.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_STARTUP_COMMAND">
 <code class="sig-name descname">CPACK_BUNDLE_STARTUP_COMMAND</code><a class="headerlink" href="#variable:CPACK_BUNDLE_STARTUP_COMMAND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to a startup script. This is a path to an executable or script that
@@ -96,42 +98,57 @@ will be run whenever an end-user double-clicks the generated bundle in the
 macOS Finder. Optional.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_APPLE_CERT_APP">
 <code class="sig-name descname">CPACK_BUNDLE_APPLE_CERT_APP</code><a class="headerlink" href="#variable:CPACK_BUNDLE_APPLE_CERT_APP" title="Permalink to this definition">¶</a></dt>
-<dd><p>The name of your Apple supplied code signing certificate for the application.
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 3.2.</span></p>
+</div>
+<p>The name of your Apple supplied code signing certificate for the application.
 The name usually takes the form <code class="docutils literal notranslate"><span class="pre">Developer</span> <span class="pre">ID</span> <span class="pre">Application:</span> <span class="pre">[Name]</span></code> or
 <code class="docutils literal notranslate"><span class="pre">3rd</span> <span class="pre">Party</span> <span class="pre">Mac</span> <span class="pre">Developer</span> <span class="pre">Application:</span> <span class="pre">[Name]</span></code>. If this variable is not set
 the application will not be signed.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_APPLE_ENTITLEMENTS">
 <code class="sig-name descname">CPACK_BUNDLE_APPLE_ENTITLEMENTS</code><a class="headerlink" href="#variable:CPACK_BUNDLE_APPLE_ENTITLEMENTS" title="Permalink to this definition">¶</a></dt>
-<dd><p>The name of the Property List (<code class="docutils literal notranslate"><span class="pre">.plist</span></code>) file that contains your Apple
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 3.2.</span></p>
+</div>
+<p>The name of the Property List (<code class="docutils literal notranslate"><span class="pre">.plist</span></code>) file that contains your Apple
 entitlements for sandboxing your application. This file is required
 for submission to the macOS App Store.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_APPLE_CODESIGN_FILES">
 <code class="sig-name descname">CPACK_BUNDLE_APPLE_CODESIGN_FILES</code><a class="headerlink" href="#variable:CPACK_BUNDLE_APPLE_CODESIGN_FILES" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list of additional files that you wish to be signed. You do not need to
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 3.2.</span></p>
+</div>
+<p>A list of additional files that you wish to be signed. You do not need to
 list the main application folder, or the main executable. You should
 list any frameworks and plugins that are included in your app bundle.</p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_BUNDLE_APPLE_CODESIGN_PARAMETER">
 <code class="sig-name descname">CPACK_BUNDLE_APPLE_CODESIGN_PARAMETER</code><a class="headerlink" href="#variable:CPACK_BUNDLE_APPLE_CODESIGN_PARAMETER" title="Permalink to this definition">¶</a></dt>
-<dd><p>Additional parameter that will passed to <code class="docutils literal notranslate"><span class="pre">codesign</span></code>.
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 3.3.</span></p>
+</div>
+<p>Additional parameter that will passed to <code class="docutils literal notranslate"><span class="pre">codesign</span></code>.
 Default value: <code class="docutils literal notranslate"><span class="pre">--deep</span> <span class="pre">-f</span></code></p>
 </dd></dl>
 
-<dl class="variable">
+<dl class="cmake variable">
 <dt id="variable:CPACK_COMMAND_CODESIGN">
 <code class="sig-name descname">CPACK_COMMAND_CODESIGN</code><a class="headerlink" href="#variable:CPACK_COMMAND_CODESIGN" title="Permalink to this definition">¶</a></dt>
-<dd><p>Path to the <code class="docutils literal notranslate"><span class="pre">codesign(1)</span></code> command used to sign applications with an
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 3.2.</span></p>
+</div>
+<p>Path to the <code class="docutils literal notranslate"><span class="pre">codesign(1)</span></code> command used to sign applications with an
 Apple cert. This variable can be used to override the automatically
 detected command (or specify its location if the auto-detection fails
 to find it).</p>
@@ -141,6 +158,7 @@ to find it).</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -176,7 +194,7 @@ to find it).</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -201,15 +219,16 @@ to find it).</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" >cpack-generators(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cpack-generators.7.html" >cpack-generators(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CPack Bundle Generator</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

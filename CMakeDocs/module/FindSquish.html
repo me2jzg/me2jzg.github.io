@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>FindSquish &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FindSquish &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FindSquish</a></li> 
       </ul>
     </div>  
 
@@ -58,7 +60,7 @@
             
   <div class="section" id="findsquish">
 <span id="module:FindSquish"></span><h1>FindSquish<a class="headerlink" href="#findsquish" title="Permalink to this headline">¶</a></h1>
-<p>– Typical Use</p>
+<p>-- Typical Use</p>
 <p>This module can be used to find Squish.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SQUISH_FOUND                    If false, don&#39;t try to use Squish
 SQUISH_VERSION                  The full version of Squish found
@@ -84,6 +86,9 @@ to cmake using Squish &gt;= 4.x:</p>
   AUT targetName SUITE suiteName TEST squishTestName
   [SETTINGSGROUP group] [PRE_COMMAND command] [POST_COMMAND command] )
 </pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.18: </span>In previous CMake versions, this function was named <code class="docutils literal notranslate"><span class="pre">squish_v4_add_test</span></code>.</p>
 </div>
 <p>The arguments have the following meaning:</p>
 <dl class="simple">
@@ -134,6 +139,7 @@ endif ()
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -161,7 +167,7 @@ endif ()
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -186,15 +192,16 @@ endif ()
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FindSquish</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

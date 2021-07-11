@@ -25,8 +25,20 @@ CMake-generated build trees created for projects that use the
 :command:`enable_testing` and :command:`add_test` commands have testing support.
 This program will run the tests and report results.
 
+.. _`CTest Options`:
+
 Options
 =======
+
+``--preset <preset>``, ``--preset=<preset>``
+ Use a test preset to specify test options. The project binary directory
+ is inferred from the ``configurePreset`` key. The current working directory
+ must contain CMake preset files.
+ See :manual:`preset <cmake-presets(7)>` for more details.
+
+``--list-presets``
+ Lists the available test presets. The current working directory must contain
+ CMake preset files.
 
 ``-C <cfg>, --build-config <cfg>``
  Choose configuration to test.
@@ -323,6 +335,9 @@ Options
 
 ``--build-and-test``
 See `Build and Test Mode`_.
+
+``--test-dir <dir>``
+Specify the directory in which to look for tests.
 
 ``--test-output-size-passed <size>``
  Limit the output for passed tests to ``<size>`` bytes.
@@ -1142,6 +1157,20 @@ Additional configuration settings include:
   * `CTest Script`_ variable: none
   * :module:`CTest` module variable: ``DRMEMORY_COMMAND_OPTIONS``
 
+``CudaSanitizerCommand``
+  Specify a ``MemoryCheckCommand`` that is known to be a command-line
+  compatible with cuda-memcheck or compute-sanitizer.
+
+  * `CTest Script`_ variable: none
+  * :module:`CTest` module variable: ``CUDA_SANITIZER_COMMAND``
+
+``CudaSanitizerCommandOptions``
+  Specify command-line options to the ``CudaSanitizerCommand`` tool.
+  They will be placed prior to the test command line.
+
+  * `CTest Script`_ variable: none
+  * :module:`CTest` module variable: ``CUDA_SANITIZER_COMMAND_OPTIONS``
+
 .. _`CTest Submit Step`:
 
 CTest Submit Step
@@ -1333,7 +1362,7 @@ Resource Allocation
 ===================
 
 CTest provides a mechanism for tests to specify the resources that they need
-in a fine-grained way, and for users to specify the resources availiable on
+in a fine-grained way, and for users to specify the resources available on
 the running machine. This allows CTest to internally keep track of which
 resources are in use and which are free, scheduling tests in a way that
 prevents them from trying to claim resources that are not available.

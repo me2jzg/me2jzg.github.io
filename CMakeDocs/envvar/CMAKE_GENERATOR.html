@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CMAKE_GENERATOR &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMAKE_GENERATOR &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-env-variables.7.html" accesskey="U">cmake-env-variables(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-env-variables.7.html" accesskey="U">cmake-env-variables(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMAKE_GENERATOR</a></li> 
       </ul>
     </div>  
 
@@ -58,10 +60,13 @@
             
   <div class="section" id="cmake-generator">
 <span id="envvar:CMAKE_GENERATOR"></span><h1>CMAKE_GENERATOR<a class="headerlink" href="#cmake-generator" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.15.</span></p>
+</div>
 <p>This is a CMake <a class="reference internal" href="../manual/cmake-language.7.html#cmake-language-environment-variables"><span class="std std-ref">Environment Variable</span></a>. Its initial value is taken from
 the calling process environment.</p>
 <p>Specifies the CMake default generator to use when no generator is supplied
-with <code class="docutils literal notranslate"><span class="pre">-G</span></code>. If the provided value doesn’t name a generator known by CMake,
+with <code class="docutils literal notranslate"><span class="pre">-G</span></code>. If the provided value doesn't name a generator known by CMake,
 the internal default is used.  Either way the resulting generator selection
 is stored in the <span class="target" id="index-0-variable:CMAKE_GENERATOR"></span><a class="reference internal" href="../variable/CMAKE_GENERATOR.html#variable:CMAKE_GENERATOR" title="CMAKE_GENERATOR"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_GENERATOR</span></code></a> variable.</p>
 <p>Some generators may be additionally configured using the environment
@@ -74,6 +79,7 @@ variables:</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -101,7 +107,7 @@ variables:</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -126,15 +132,16 @@ variables:</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-env-variables.7.html" >cmake-env-variables(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-env-variables.7.html" >cmake-env-variables(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMAKE_GENERATOR</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

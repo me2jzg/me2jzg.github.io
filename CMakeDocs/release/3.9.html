@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>CMake 3.9 Release Notes &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMake 3.9 Release Notes &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">CMake Release Notes</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">CMake Release Notes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMake 3.9 Release Notes</a></li> 
       </ul>
     </div>  
 
@@ -319,9 +321,9 @@ the different Bundle types and layouts on macOS and iOS.</p></li>
 and below.  The <span class="target" id="index-0-manual:cmake-policies(7)"></span><a class="reference internal" href="../manual/cmake-policies.7.html#manual:cmake-policies(7)" title="cmake-policies(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">cmake-policies(7)</span></code></a> manual explains that the
 OLD behaviors of all policies are deprecated and that projects should
 always port to the NEW behaviors as soon as possible.</p></li>
-<li><p>The <span class="target" id="index-0-generator:Visual Studio 8 2005"></span><a class="reference internal" href="../generator/Visual Studio 8 2005.html#generator:Visual Studio 8 2005" title="Visual Studio 8 2005"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">8</span> <span class="pre">2005</span></code></a> generator is now deprecated
+<li><p>The <span class="target" id="index-0-generator:Visual Studio 8 2005"></span><a class="reference internal" href="../generator/Visual%20Studio%208%202005.html#generator:Visual Studio 8 2005" title="Visual Studio 8 2005"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">8</span> <span class="pre">2005</span></code></a> generator is now deprecated
 and will be removed in a future version of CMake.</p></li>
-<li><p>The <span class="target" id="index-0-generator:Visual Studio 7 .NET 2003"></span><a class="reference internal" href="../generator/Visual Studio 7 .NET 2003.html#generator:Visual Studio 7 .NET 2003" title="Visual Studio 7 .NET 2003"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">7</span> <span class="pre">.NET</span> <span class="pre">2003</span></code></a> generator has been removed.</p></li>
+<li><p>The <span class="target" id="index-0-generator:Visual Studio 7 .NET 2003"></span><a class="reference internal" href="../generator/Visual%20Studio%207%20.NET%202003.html#generator:Visual Studio 7 .NET 2003" title="Visual Studio 7 .NET 2003"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">7</span> <span class="pre">.NET</span> <span class="pre">2003</span></code></a> generator has been removed.</p></li>
 <li><p>The <span class="target" id="index-2-generator:Xcode"></span><a class="reference internal" href="../generator/Xcode.html#generator:Xcode" title="Xcode"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Xcode</span></code></a> generator dropped support for Xcode versions
 older than 3.</p></li>
 <li><p>The <span class="target" id="index-1-module:FindDoxygen"></span><a class="reference internal" href="../module/FindDoxygen.html#module:FindDoxygen" title="FindDoxygen"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindDoxygen</span></code></a> module has deprecated several variables.</p></li>
@@ -335,7 +337,7 @@ the form <code class="docutils literal notranslate"><span class="pre">file:///c:
 <ul class="simple">
 <li><p>When using <span class="target" id="index-3-prop_tgt:AUTOMOC"></span><a class="reference internal" href="../prop_tgt/AUTOMOC.html#prop_tgt:AUTOMOC" title="AUTOMOC"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">AUTOMOC</span></code></a>, CMake now scans for the presence of the
 <code class="docutils literal notranslate"><span class="pre">Q_PLUGIN_METADATA</span></code> macro and reruns moc when the file from the
-macro’s <code class="docutils literal notranslate"><span class="pre">FILE</span></code> argument changes.</p></li>
+macro's <code class="docutils literal notranslate"><span class="pre">FILE</span></code> argument changes.</p></li>
 <li><p>When <span class="target" id="index-4-prop_tgt:AUTOMOC"></span><a class="reference internal" href="../prop_tgt/AUTOMOC.html#prop_tgt:AUTOMOC" title="AUTOMOC"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">AUTOMOC</span></code></a> detects an include statement of the form
 <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;moc_&lt;basename&gt;.cpp&quot;</span></code> the search for the respective header file
 now looks in the <span class="target" id="index-0-prop_tgt:INCLUDE_DIRECTORIES"></span><a class="reference internal" href="../prop_tgt/INCLUDE_DIRECTORIES.html#prop_tgt:INCLUDE_DIRECTORIES" title="INCLUDE_DIRECTORIES"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">INCLUDE_DIRECTORIES</span></code></a> of the target as well.</p></li>
@@ -345,13 +347,13 @@ now looks in the <span class="target" id="index-0-prop_tgt:INCLUDE_DIRECTORIES">
 failure when all tests are either skipped or pass.</p></li>
 <li><p>The <span class="target" id="index-1-generator:Ninja"></span><a class="reference internal" href="../generator/Ninja.html#generator:Ninja" title="Ninja"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Ninja</span></code></a> generator has loosened the dependencies of object
 compilation.  Object compilation now depends only on custom targets
-and custom commands associated with libraries on which the object’s target
+and custom commands associated with libraries on which the object's target
 depends and no longer depends on the libraries themselves.  Source files
-in dependent targets may now compile without waiting for their targets’
+in dependent targets may now compile without waiting for their targets'
 dependencies to link.</p></li>
 <li><p>On macOS, <code class="docutils literal notranslate"><span class="pre">RPATH</span></code> settings such as <span class="target" id="index-1-prop_tgt:BUILD_WITH_INSTALL_RPATH"></span><a class="reference internal" href="../prop_tgt/BUILD_WITH_INSTALL_RPATH.html#prop_tgt:BUILD_WITH_INSTALL_RPATH" title="BUILD_WITH_INSTALL_RPATH"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">BUILD_WITH_INSTALL_RPATH</span></code></a>
 no longer affect the <code class="docutils literal notranslate"><span class="pre">install_name</span></code> field.  See policy <span class="target" id="index-0-policy:CMP0068"></span><a class="reference internal" href="../policy/CMP0068.html#policy:CMP0068" title="CMP0068"><code class="xref cmake cmake-policy docutils literal notranslate"><span class="pre">CMP0068</span></code></a>.</p></li>
-<li><p>The <span class="target" id="index-0-generator:Visual Studio 14 2015"></span><a class="reference internal" href="../generator/Visual Studio 14 2015.html#generator:Visual Studio 14 2015" title="Visual Studio 14 2015"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">14</span> <span class="pre">2015</span></code></a> generator has been taught about
+<li><p>The <span class="target" id="index-0-generator:Visual Studio 14 2015"></span><a class="reference internal" href="../generator/Visual%20Studio%2014%202015.html#generator:Visual Studio 14 2015" title="Visual Studio 14 2015"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">14</span> <span class="pre">2015</span></code></a> generator has been taught about
 a change to the <code class="docutils literal notranslate"><span class="pre">v140</span></code> toolset made by a VS 2015 update.  VS changed
 the set of values it understands for the <code class="docutils literal notranslate"><span class="pre">GenerateDebugInformation</span></code>
 linker setting that produces the <code class="docutils literal notranslate"><span class="pre">-DEBUG</span></code> linker flag variants.</p></li>
@@ -375,9 +377,9 @@ may be re-introduced in the future in a more-compatible way.</p></li>
 <li><p>On macOS, the default application bundle <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> file no longer
 enables Hi-DPI support as it did in 3.9.0 and 3.9.1.  The change had
 to be reverted because it broke iOS applications.</p></li>
-<li><p>The Xcode generator no longer adds “outputPaths” to custom script
+<li><p>The Xcode generator no longer adds &quot;outputPaths&quot; to custom script
 build phases as it did in 3.9.0 and 3.9.1.  This was added in an
-attempt to support Xcode 9’s new build system, but broke incremental
+attempt to support Xcode 9's new build system, but broke incremental
 rebuilds for both the old and new Xcode build systems.</p></li>
 </ul>
 </div>
@@ -385,6 +387,7 @@ rebuilds for both the old and new Xcode build systems.</p></li>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -438,7 +441,7 @@ rebuilds for both the old and new Xcode build systems.</p></li>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -463,15 +466,16 @@ rebuilds for both the old and new Xcode build systems.</p></li>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >CMake Release Notes</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >CMake Release Notes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CMake 3.9 Release Notes</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

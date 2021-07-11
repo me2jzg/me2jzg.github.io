@@ -1,25 +1,26 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-  <title>FindSDL_sound &mdash; CMake 3.18.3 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FindSDL_sound &mdash; CMake 3.20.5 Documentation</title>
 
     <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     
     <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="FindSDL_ttf" href="FindSDL_ttf.html" />
-    <link rel="prev" title="FindSDL" href="FindSDL.html" />
+    <link rel="prev" title="FindSDL_net" href="FindSDL_net.html" />
   
  
 
@@ -34,7 +35,7 @@
           <a href="FindSDL_ttf.html" title="FindSDL_ttf"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="FindSDL.html" title="FindSDL"
+          <a href="FindSDL_net.html" title="FindSDL_net"
              accesskey="P">previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -44,10 +45,11 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FindSDL_sound</a></li> 
       </ul>
     </div>  
 
@@ -74,7 +76,7 @@ SDL_SOUND_VERSION_STRING, human-readable string containing the
   version of SDL_sound
 </pre></div>
 </div>
-<p>This module also defines (but you shouldn’t need to use directly)</p>
+<p>This module also defines (but you shouldn't need to use directly)</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SDL_SOUND_LIBRARY, the name of just the SDL_sound library you would link
 against. Use SDL_SOUND_LIBRARIES for you link instructions and not this one.
 </pre></div>
@@ -98,7 +100,7 @@ compiled in a large variety of different ways which are independent of
 platform.  SDL_sound may dynamically link against other 3rd party
 libraries to get additional codec support, such as Ogg Vorbis, SMPEG,
 ModPlug, MikMod, FLAC, Speex, and potentially others.  Under some
-circumstances which I don’t fully understand, there seems to be a
+circumstances which I don't fully understand, there seems to be a
 requirement that dependent libraries of libraries you use must also be
 explicitly linked against in order to successfully compile.  SDL_sound
 does not currently have any system in place to know how it was
@@ -109,7 +111,7 @@ uses SDL_sound, and then tries to build it.  If the build fails, it
 parses the error output for known symbol names to figure out which
 libraries are needed.</p>
 <p>Responds to the $SDLDIR and $SDLSOUNDDIR environmental variable that
-would correspond to the ./configure –prefix=$SDLDIR used in building
+would correspond to the ./configure --prefix=$SDLDIR used in building
 SDL.</p>
 <p>On OSX, this will prefer the Framework version (if found) over others.
 People will have to manually change the cache values of SDL_LIBRARY to
@@ -118,14 +120,15 @@ to modify the search paths.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="FindSDL.html"
-                        title="previous chapter">FindSDL</a></p>
+  <p class="topless"><a href="FindSDL_net.html"
+                        title="previous chapter">FindSDL_net</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="FindSDL_ttf.html"
                         title="next chapter">FindSDL_ttf</a></p>
@@ -145,7 +148,7 @@ to modify the search paths.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -160,7 +163,7 @@ to modify the search paths.</p>
           <a href="FindSDL_ttf.html" title="FindSDL_ttf"
              >next</a> |</li>
         <li class="right" >
-          <a href="FindSDL.html" title="FindSDL"
+          <a href="FindSDL_net.html" title="FindSDL_net"
              >previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -170,15 +173,16 @@ to modify the search paths.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.18.3 Documentation</a> &#187;
+    <a href="../index.html">3.20.5 Documentation</a> &#187;
   </li>
 
-          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FindSDL_sound</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2020 Kitware, Inc. and Contributors.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>
