@@ -1,7 +1,0 @@
-<map id="mbedtls_x509_crl" name="mbedtls_x509_crl">
-<area shape="rect" id="node1" title=" " alt="" coords="310,289,434,316"/>
-<area shape="rect" id="node2" href="$structmbedtls__x509__crl__entry.html" title=" " alt="" coords="376,162,536,189"/>
-<area shape="rect" id="node3" href="$structmbedtls__asn1__buf.html" title=" " alt="" coords="224,5,352,32"/>
-<area shape="rect" id="node5" href="$structmbedtls__asn1__named__data.html" title=" " alt="" coords="5,162,187,189"/>
-<area shape="rect" id="node4" href="$structmbedtls__x509__time.html" title=" " alt="" coords="495,5,630,32"/>
-</map>
