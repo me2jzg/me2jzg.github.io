@@ -1,30 +1,28 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FindRuby &mdash; CMake 3.20.5 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>FindRuby &mdash; CMake 3.31.8 Documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=3e562cf9" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/documentation_options.js?v=8f1a9fce"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
-    <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
+    <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="FindSDL" href="FindSDL.html" />
     <link rel="prev" title="FindRTI" href="FindRTI.html" />
-  
  
 
   </head><body>
+
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -45,7 +43,7 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" accesskey="U">cmake-modules(7)</a> &#187;</li>
@@ -58,24 +56,21 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="findruby">
-<span id="module:FindRuby"></span><h1>FindRuby<a class="headerlink" href="#findruby" title="Permalink to this headline">¶</a></h1>
-<p>Find Ruby</p>
-<p>This module finds if Ruby is installed and determines where the
-include files and libraries are.  Ruby 1.8 through 2.7 are
-supported.</p>
+  <section id="findruby">
+<span id="module:FindRuby"></span><h1>FindRuby<a class="headerlink" href="#findruby" title="Link to this heading">¶</a></h1>
+<p>This module determines if Ruby is installed and finds the locations of its
+include files and libraries. Ruby 1.8 through 3.4 are supported.</p>
 <p>The minimum required version of Ruby can be specified using the
 standard syntax, e.g.</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Ruby</span><span class="w"> </span><span class="m">2.5.1</span><span class="w"> </span><span class="no">EXACT</span><span class="w"> </span><span class="no">REQUIRED</span><span class="nf">)</span><span class="w"></span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Ruby</span><span class="w"> </span><span class="m">3.2.6</span><span class="w"> </span><span class="no">EXACT</span><span class="w"> </span><span class="no">REQUIRED</span><span class="nf">)</span>
 <span class="c"># OR</span>
-<span class="nf">find_package(</span><span class="nb">Ruby</span><span class="w"> </span><span class="m">2.4</span><span class="nf">)</span><span class="w"></span>
+<span class="nf">find_package(</span><span class="nb">Ruby</span><span class="w"> </span><span class="m">3.2</span><span class="nf">)</span>
 </pre></div>
 </div>
-<p>It also determines what the name of the library is.</p>
 <p>Virtual environments such as RVM are handled as well, by passing
 the argument <code class="docutils literal notranslate"><span class="pre">Ruby_FIND_VIRTUALENV</span></code></p>
-<div class="section" id="result-variables">
-<h2>Result Variables<a class="headerlink" href="#result-variables" title="Permalink to this headline">¶</a></h2>
+<section id="result-variables">
+<h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module will set the following variables in your project:</p>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">Ruby_FOUND</span></code></dt><dd><p>set to true if ruby was found successfully</p>
@@ -85,10 +80,10 @@ the argument <code class="docutils literal notranslate"><span class="pre">Ruby_F
 <dt><code class="docutils literal notranslate"><span class="pre">Ruby_INCLUDE_DIRS</span></code></dt><dd><p>include dirs to be used when using the ruby library</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">Ruby_LIBRARIES</span></code></dt><dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 3.18: </span>libraries needed to use ruby from C.</p>
+<p><span class="versionmodified added">Added in version 3.18: </span>libraries needed to use ruby from C.</p>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">Ruby_VERSION</span></code></dt><dd><p>the version of ruby which was found, e.g. &quot;1.8.7&quot;</p>
+<dt><code class="docutils literal notranslate"><span class="pre">Ruby_VERSION</span></code></dt><dd><p>the version of ruby which was found, e.g. &quot;3.2.6&quot;</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">Ruby_VERSION_MAJOR</span></code></dt><dd><p>Ruby major version.</p>
 </dd>
@@ -116,15 +111,13 @@ don't use them in new code:</p>
 <dt><code class="docutils literal notranslate"><span class="pre">RUBY_FOUND</span></code></dt><dd><p>same as Ruby_FOUND.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="hints">
-<h2>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="hints">
+<h2>Hints<a class="headerlink" href="#hints" title="Link to this heading">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 3.18.</span></p>
+<p><span class="versionmodified added">Added in version 3.18.</span></p>
 </div>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">Ruby_ROOT_DIR</span></code></dt><dd><p>Define the root directory of a Ruby installation.</p>
-</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">Ruby_FIND_VIRTUALENV</span></code></dt><dd><p>This variable defines the handling of virtual environments managed by
 <code class="docutils literal notranslate"><span class="pre">rvm</span></code>. It is meaningful only when a virtual environment
 is active (i.e. the <code class="docutils literal notranslate"><span class="pre">rvm</span></code> script has been evaluated or at least the
@@ -141,8 +134,8 @@ interpreter (assuming it isn't still in the PATH...)</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -151,8 +144,9 @@ interpreter (assuming it isn't still in the PATH...)</p></li>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">FindRuby</a><ul>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
@@ -160,12 +154,17 @@ interpreter (assuming it isn't still in the PATH...)</p></li>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="FindRTI.html"
-                        title="previous chapter">FindRTI</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="FindSDL.html"
-                        title="next chapter">FindSDL</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="FindRTI.html"
+                          title="previous chapter">FindRTI</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="FindSDL.html"
+                          title="next chapter">FindSDL</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -173,16 +172,16 @@ interpreter (assuming it isn't still in the PATH...)</p></li>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -207,16 +206,17 @@ interpreter (assuming it isn't still in the PATH...)</p></li>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-modules.7.html" >cmake-modules(7)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">FindRuby</a></li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2000-2024 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     </div>
   </body>
 </html>

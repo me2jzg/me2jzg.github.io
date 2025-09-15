@@ -1,30 +1,28 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CMAKE_CFG_INTDIR &mdash; CMake 3.20.5 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>CMAKE_CFG_INTDIR &mdash; CMake 3.31.8 Documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=3e562cf9" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/documentation_options.js?v=8f1a9fce"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
-    <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
+    <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CMAKE_COMMAND" href="CMAKE_COMMAND.html" />
     <link rel="prev" title="CMAKE_CACHEFILE_DIR" href="CMAKE_CACHEFILE_DIR.html" />
-  
  
 
   </head><body>
+
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -45,7 +43,7 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" accesskey="U">cmake-variables(7)</a> &#187;</li>
@@ -58,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="cmake-cfg-intdir">
-<span id="variable:CMAKE_CFG_INTDIR"></span><h1>CMAKE_CFG_INTDIR<a class="headerlink" href="#cmake-cfg-intdir" title="Permalink to this headline">¶</a></h1>
+  <section id="cmake-cfg-intdir">
+<span id="variable:CMAKE_CFG_INTDIR"></span><h1>CMAKE_CFG_INTDIR<a class="headerlink" href="#cmake-cfg-intdir" title="Link to this heading">¶</a></h1>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.21: </span>This variable has poor support on <span class="target" id="index-0-generator:Ninja Multi-Config"></span><a class="reference internal" href="../generator/Ninja%20Multi-Config.html#generator:Ninja Multi-Config" title="Ninja Multi-Config"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Ninja</span> <span class="pre">Multi-Config</span></code></a>, and
+predates the existence of the <span class="target" id="index-0-genex:CONFIG"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#genex:CONFIG" title="CONFIG"><code class="xref cmake cmake-genex docutils literal notranslate"><span class="pre">$&lt;CONFIG&gt;</span></code></a> generator expression. Use
+<code class="docutils literal notranslate"><span class="pre">$&lt;CONFIG&gt;</span></code> instead.</p>
+</div>
 <p>Build-time reference to per-configuration output subdirectory.</p>
 <p>For native build systems supporting multiple configurations in the
 build tree (such as <a class="reference internal" href="../manual/cmake-generators.7.html#visual-studio-generators"><span class="std std-ref">Visual Studio Generators</span></a> and <span class="target" id="index-0-generator:Xcode"></span><a class="reference internal" href="../generator/Xcode.html#generator:Xcode" title="Xcode"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Xcode</span></code></a>),
@@ -67,18 +70,13 @@ the value is a reference to a build-time variable specifying the name
 of the per-configuration output subdirectory.  On <a class="reference internal" href="../manual/cmake-generators.7.html#makefile-generators"><span class="std std-ref">Makefile Generators</span></a>
 this evaluates to <cite>.</cite> because there is only one configuration in a build tree.
 Example values:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$(ConfigurationName) = Visual Studio 9
-$(Configuration)     = Visual Studio 10
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$(Configuration)     = Visual Studio
 $(CONFIGURATION)     = Xcode
 .                    = Make-based tools
 .                    = Ninja
 ${CONFIGURATION}     = Ninja Multi-Config
 </pre></div>
 </div>
-<p>Note that this variable only has limited support on
-<span class="target" id="index-0-generator:Ninja Multi-Config"></span><a class="reference internal" href="../generator/Ninja%20Multi-Config.html#generator:Ninja Multi-Config" title="Ninja Multi-Config"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Ninja</span> <span class="pre">Multi-Config</span></code></a>. It is recommended that you use the
-<code class="docutils literal notranslate"><span class="pre">$&lt;CONFIG&gt;</span></code> <span class="target" id="index-0-manual:cmake-generator-expressions(7)"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)" title="cmake-generator-expressions(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">generator</span> <span class="pre">expression</span></code></a>
-instead.</p>
 <p>Since these values are evaluated by the native build system, this
 variable is suitable only for use in command lines that will be
 evaluated at build time.  Example of intended usage:</p>
@@ -102,7 +100,7 @@ by just <code class="docutils literal notranslate"><span class="pre">mytool</spa
 multi-configuration build systems the value of this variable is passed
 as the value of preprocessor symbol <code class="docutils literal notranslate"><span class="pre">CMAKE_INTDIR</span></code> to the compilation
 of all source files.</p>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -111,12 +109,16 @@ of all source files.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="CMAKE_CACHEFILE_DIR.html"
-                        title="previous chapter">CMAKE_CACHEFILE_DIR</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="CMAKE_COMMAND.html"
-                        title="next chapter">CMAKE_COMMAND</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="CMAKE_CACHEFILE_DIR.html"
+                          title="previous chapter">CMAKE_CACHEFILE_DIR</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="CMAKE_COMMAND.html"
+                          title="next chapter">CMAKE_COMMAND</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -124,16 +126,16 @@ of all source files.</p>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -158,16 +160,17 @@ of all source files.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-variables.7.html" >cmake-variables(7)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">CMAKE_CFG_INTDIR</a></li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2000-2024 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     </div>
   </body>
 </html>

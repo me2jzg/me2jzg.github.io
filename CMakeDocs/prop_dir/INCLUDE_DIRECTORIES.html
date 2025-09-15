@@ -1,30 +1,28 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INCLUDE_DIRECTORIES &mdash; CMake 3.20.5 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>INCLUDE_DIRECTORIES &mdash; CMake 3.31.8 Documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=3e562cf9" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/documentation_options.js?v=8f1a9fce"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
-    <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
+    <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="INCLUDE_REGULAR_EXPRESSION" href="INCLUDE_REGULAR_EXPRESSION.html" />
-    <link rel="prev" title="IMPLICIT_DEPENDS_INCLUDE_TRANSFORM" href="IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.html" />
-  
+    <link rel="prev" title="IMPORTED_TARGETS" href="IMPORTED_TARGETS.html" />
  
 
   </head><body>
+
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -35,7 +33,7 @@
           <a href="INCLUDE_REGULAR_EXPRESSION.html" title="INCLUDE_REGULAR_EXPRESSION"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.html" title="IMPLICIT_DEPENDS_INCLUDE_TRANSFORM"
+          <a href="IMPORTED_TARGETS.html" title="IMPORTED_TARGETS"
              accesskey="P">previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -45,7 +43,7 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" accesskey="U">cmake-properties(7)</a> &#187;</li>
@@ -58,8 +56,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="include-directories">
-<span id="prop_dir:INCLUDE_DIRECTORIES"></span><h1>INCLUDE_DIRECTORIES<a class="headerlink" href="#include-directories" title="Permalink to this headline">¶</a></h1>
+  <section id="include-directories">
+<span id="prop_dir:INCLUDE_DIRECTORIES"></span><h1>INCLUDE_DIRECTORIES<a class="headerlink" href="#include-directories" title="Link to this heading">¶</a></h1>
 <p>List of preprocessor include file search directories.</p>
 <p>This property specifies the list of directories given so far to the
 <span class="target" id="index-0-command:include_directories"></span><a class="reference internal" href="../command/include_directories.html#command:include_directories" title="include_directories"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">include_directories()</span></code></a> command.</p>
@@ -84,7 +82,7 @@ include paths for the compiler.</p>
 the syntax <code class="docutils literal notranslate"><span class="pre">$&lt;...&gt;</span></code>.  See the <span class="target" id="index-0-manual:cmake-generator-expressions(7)"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)" title="cmake-generator-expressions(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">cmake-generator-expressions(7)</span></code></a>
 manual for available expressions.  See the <span class="target" id="index-0-manual:cmake-buildsystem(7)"></span><a class="reference internal" href="../manual/cmake-buildsystem.7.html#manual:cmake-buildsystem(7)" title="cmake-buildsystem(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">cmake-buildsystem(7)</span></code></a>
 manual for more on defining buildsystem properties.</p>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -93,12 +91,16 @@ manual for more on defining buildsystem properties.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.html"
-                        title="previous chapter">IMPLICIT_DEPENDS_INCLUDE_TRANSFORM</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="INCLUDE_REGULAR_EXPRESSION.html"
-                        title="next chapter">INCLUDE_REGULAR_EXPRESSION</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="IMPORTED_TARGETS.html"
+                          title="previous chapter">IMPORTED_TARGETS</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="INCLUDE_REGULAR_EXPRESSION.html"
+                          title="next chapter">INCLUDE_REGULAR_EXPRESSION</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -106,16 +108,16 @@ manual for more on defining buildsystem properties.</p>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -130,7 +132,7 @@ manual for more on defining buildsystem properties.</p>
           <a href="INCLUDE_REGULAR_EXPRESSION.html" title="INCLUDE_REGULAR_EXPRESSION"
              >next</a> |</li>
         <li class="right" >
-          <a href="IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.html" title="IMPLICIT_DEPENDS_INCLUDE_TRANSFORM"
+          <a href="IMPORTED_TARGETS.html" title="IMPORTED_TARGETS"
              >previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -140,16 +142,17 @@ manual for more on defining buildsystem properties.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" >cmake-properties(7)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">INCLUDE_DIRECTORIES</a></li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2000-2024 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     </div>
   </body>
 </html>

@@ -1,5 +1,0 @@
-<map id="wxZoomGestureEvent" name="wxZoomGestureEvent">
-<area shape="rect" id="node2" href="$classwx_gesture_event.html" title="This is the base class for all supported gesture events. " alt="" coords="22,155,141,181"/>
-<area shape="rect" id="node3" href="$classwx_event.html" title="An event is a structure holding information about an event passed to a callback or member function..." alt="" coords="45,80,118,107"/>
-<area shape="rect" id="node4" href="$classwx_object.html" title="This is the root class of many of the wxWidgets classes. " alt="" coords="43,5,120,32"/>
-</map>

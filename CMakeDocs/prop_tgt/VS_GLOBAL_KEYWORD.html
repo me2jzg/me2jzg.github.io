@@ -1,30 +1,28 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VS_GLOBAL_KEYWORD &mdash; CMake 3.20.5 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>VS_GLOBAL_KEYWORD &mdash; CMake 3.31.8 Documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=3e562cf9" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/documentation_options.js?v=8f1a9fce"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
-    <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
+    <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="VS_GLOBAL_PROJECT_TYPES" href="VS_GLOBAL_PROJECT_TYPES.html" />
-    <link rel="prev" title="VS_DPI_AWARE" href="VS_DPI_AWARE.html" />
-  
+    <link rel="prev" title="VS_FRAMEWORK_REFERENCES" href="VS_FRAMEWORK_REFERENCES.html" />
  
 
   </head><body>
+
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -35,7 +33,7 @@
           <a href="VS_GLOBAL_PROJECT_TYPES.html" title="VS_GLOBAL_PROJECT_TYPES"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="VS_DPI_AWARE.html" title="VS_DPI_AWARE"
+          <a href="VS_FRAMEWORK_REFERENCES.html" title="VS_FRAMEWORK_REFERENCES"
              accesskey="P">previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -45,7 +43,7 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" accesskey="U">cmake-properties(7)</a> &#187;</li>
@@ -58,16 +56,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="vs-global-keyword">
-<span id="prop_tgt:VS_GLOBAL_KEYWORD"></span><h1>VS_GLOBAL_KEYWORD<a class="headerlink" href="#vs-global-keyword" title="Permalink to this headline">¶</a></h1>
-<p>Visual Studio project keyword for VS 10 (2010) and newer.</p>
+  <section id="vs-global-keyword">
+<span id="prop_tgt:VS_GLOBAL_KEYWORD"></span><h1>VS_GLOBAL_KEYWORD<a class="headerlink" href="#vs-global-keyword" title="Link to this heading">¶</a></h1>
+<p>Visual Studio project keyword.</p>
 <p>Sets the &quot;keyword&quot; attribute for a generated Visual Studio project.
 Defaults to &quot;Win32Proj&quot;.  You may wish to override this value with
 &quot;ManagedCProj&quot;, for example, in a Visual Studio managed C++ unit test
 project.</p>
-<p>Use the <span class="target" id="index-0-prop_tgt:VS_KEYWORD"></span><a class="reference internal" href="VS_KEYWORD.html#prop_tgt:VS_KEYWORD" title="VS_KEYWORD"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">VS_KEYWORD</span></code></a> target property to set the
-keyword for Visual Studio 9 (2008) and older.</p>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -76,12 +72,16 @@ keyword for Visual Studio 9 (2008) and older.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="VS_DPI_AWARE.html"
-                        title="previous chapter">VS_DPI_AWARE</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="VS_GLOBAL_PROJECT_TYPES.html"
-                        title="next chapter">VS_GLOBAL_PROJECT_TYPES</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="VS_FRAMEWORK_REFERENCES.html"
+                          title="previous chapter">VS_FRAMEWORK_REFERENCES</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="VS_GLOBAL_PROJECT_TYPES.html"
+                          title="next chapter">VS_GLOBAL_PROJECT_TYPES</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -89,16 +89,16 @@ keyword for Visual Studio 9 (2008) and older.</p>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -113,7 +113,7 @@ keyword for Visual Studio 9 (2008) and older.</p>
           <a href="VS_GLOBAL_PROJECT_TYPES.html" title="VS_GLOBAL_PROJECT_TYPES"
              >next</a> |</li>
         <li class="right" >
-          <a href="VS_DPI_AWARE.html" title="VS_DPI_AWARE"
+          <a href="VS_FRAMEWORK_REFERENCES.html" title="VS_FRAMEWORK_REFERENCES"
              >previous</a> |</li>
   <li>
     <img src="../_static/cmake-logo-16.png" alt=""
@@ -123,16 +123,17 @@ keyword for Visual Studio 9 (2008) and older.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" >cmake-properties(7)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">VS_GLOBAL_KEYWORD</a></li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2000-2024 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     </div>
   </body>
 </html>

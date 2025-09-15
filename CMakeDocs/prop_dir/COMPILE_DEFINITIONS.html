@@ -1,30 +1,28 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>COMPILE_DEFINITIONS &mdash; CMake 3.20.5 Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="../_static/cmake.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>COMPILE_DEFINITIONS &mdash; CMake 3.31.8 Documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=3e562cf9" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/documentation_options.js?v=8f1a9fce"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
-    <link rel="shortcut icon" href="../_static/cmake-favicon.ico"/>
+    <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="COMPILE_OPTIONS" href="COMPILE_OPTIONS.html" />
     <link rel="prev" title="CMAKE_CONFIGURE_DEPENDS" href="CMAKE_CONFIGURE_DEPENDS.html" />
-  
  
 
   </head><body>
+
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -45,7 +43,7 @@
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" accesskey="U">cmake-properties(7)</a> &#187;</li>
@@ -58,8 +56,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="compile-definitions">
-<span id="prop_dir:COMPILE_DEFINITIONS"></span><h1>COMPILE_DEFINITIONS<a class="headerlink" href="#compile-definitions" title="Permalink to this headline">¶</a></h1>
+  <section id="compile-definitions">
+<span id="prop_dir:COMPILE_DEFINITIONS"></span><h1>COMPILE_DEFINITIONS<a class="headerlink" href="#compile-definitions" title="Link to this heading">¶</a></h1>
 <p>Preprocessor definitions for compiling a directory's sources.</p>
 <p>This property specifies the list of options given so far to the
 <span class="target" id="index-0-command:add_compile_definitions"></span><a class="reference internal" href="../command/add_compile_definitions.html#command:add_compile_definitions" title="add_compile_definitions"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">add_compile_definitions()</span></code></a> (or <span class="target" id="index-0-command:add_definitions"></span><a class="reference internal" href="../command/add_definitions.html#command:add_definitions" title="add_definitions"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">add_definitions()</span></code></a>) command.</p>
@@ -73,6 +71,9 @@ values).</p>
 directory's parent.</p>
 <p>CMake will automatically drop some definitions that are not supported
 by the native build tool.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.26: </span>Any leading <code class="docutils literal notranslate"><span class="pre">-D</span></code> on an item will be removed.</p>
+</div>
 <p>Disclaimer: Most native build tools have poor support for escaping
 certain values.  CMake has work-arounds for many cases but some values
 may just not be possible to pass correctly.  If a value does not seem
@@ -98,7 +99,7 @@ manual for more on defining buildsystem properties.</p>
 <p>The corresponding <span class="target" id="index-0-prop_dir:COMPILE_DEFINITIONS_&lt;CONFIG&gt;"></span><a class="reference internal" href="COMPILE_DEFINITIONS_CONFIG.html#prop_dir:COMPILE_DEFINITIONS_&lt;CONFIG&gt;" title="COMPILE_DEFINITIONS_&lt;CONFIG&gt;"><code class="xref cmake cmake-prop_dir docutils literal notranslate"><span class="pre">COMPILE_DEFINITIONS_&lt;CONFIG&gt;</span></code></a> property may
 be set to specify per-configuration definitions.  Generator expressions
 should be preferred instead of setting the alternative property.</p>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -107,12 +108,16 @@ should be preferred instead of setting the alternative property.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="CMAKE_CONFIGURE_DEPENDS.html"
-                        title="previous chapter">CMAKE_CONFIGURE_DEPENDS</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="COMPILE_OPTIONS.html"
-                        title="next chapter">COMPILE_OPTIONS</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="CMAKE_CONFIGURE_DEPENDS.html"
+                          title="previous chapter">CMAKE_CONFIGURE_DEPENDS</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="COMPILE_OPTIONS.html"
+                          title="next chapter">COMPILE_OPTIONS</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -120,16 +125,16 @@ should be preferred instead of setting the alternative property.</p>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -154,16 +159,17 @@ should be preferred instead of setting the alternative property.</p>
     <a href="https://cmake.org/">CMake</a> &#187;
   </li>
   <li>
-    <a href="../index.html">3.20.5 Documentation</a> &#187;
+    <a href="../index.html">3.31.8 Documentation</a> &#187;
   </li>
 
           <li class="nav-item nav-item-1"><a href="../manual/cmake-properties.7.html" >cmake-properties(7)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">COMPILE_DEFINITIONS</a></li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2000-2021 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2000-2024 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     </div>
   </body>
 </html>

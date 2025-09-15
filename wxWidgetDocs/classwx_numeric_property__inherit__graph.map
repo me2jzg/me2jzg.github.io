@@ -1,7 +1,0 @@
-<map id="wxNumericProperty" name="wxNumericProperty">
-<area shape="rect" id="node4" href="$classwx_float_property.html" title="Basic property with double&#45;precision floating point value. " alt="" coords="5,229,123,256"/>
-<area shape="rect" id="node5" href="$classwx_int_property.html" title="Basic property with integer value. " alt="" coords="147,229,250,256"/>
-<area shape="rect" id="node6" href="$classwx_u_int_property.html" title="Basic property with unsigned integer value. " alt="" coords="274,229,387,256"/>
-<area shape="rect" id="node2" href="$classwx_p_g_property.html" title="wxPGProperty is base class for all wxPropertyGrid properties and as such it is not intended to be ins..." alt="" coords="145,80,252,107"/>
-<area shape="rect" id="node3" href="$classwx_object.html" title="This is the root class of many of the wxWidgets classes. " alt="" coords="160,5,237,32"/>
-</map>

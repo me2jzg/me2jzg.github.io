@@ -1,23 +1,37 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <title>email: Examples &#8212; Python 3.8.6 documentation</title>
-    <link rel="stylesheet" href="../_static/pydoctheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="email: Examples" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/library/email.examples.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="Here are a few examples of how to use the email package to read, write, and send simple email messages, as well as more complex MIME messages. First, let’s see how to create and send a simple text ..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://docs.python.org/3.13/_images/social_previews/summary_library_email.examples_ca525c12.png" />
+<meta property="og:image:alt" content="Here are a few examples of how to use the email package to read, write, and send simple email messages, as well as more complex MIME messages. First, let’s see how to create and send a simple text ..." />
+<meta name="description" content="Here are a few examples of how to use the email package to read, write, and send simple email messages, as well as more complex MIME messages. First, let’s see how to create and send a simple text ..." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#3776ab">
+
+    <title>email: Examples &#8212; Python 3.13.7 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=5ff89526" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=5349f25f" />
     
-    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script src="../_static/documentation_options.js?v=a126d08a"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.8.6 documentation"
+          title="Search within Python 3.13.7 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -25,9 +39,11 @@
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="next" title="email.message.Message: Representing an email message using the compat32 API" href="email.compat32-message.html" />
     <link rel="prev" title="email.contentmanager: Managing MIME Content" href="email.contentmanager.html" />
-    <link rel="canonical" href="https://docs.python.org/3/library/email.examples.html" />
     
       
+      <script defer data-domain="docs.python.org" src="https://analytics.python.org/js/script.outbound-links.js"></script>
+      
+      <link rel="canonical" href="https://docs.python.org/3/library/email.examples.html">
       
     
 
@@ -39,17 +55,77 @@
         }
       }
     </style>
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg">
+            <script type="text/javascript" src="../_static/copybutton.js"></script>
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/search-focus.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="../_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
 
-    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    
-    <script type="text/javascript" src="../_static/copybutton.js"></script>
-    
-     
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Quick search" aria-label="Quick search" type="search" name="q">
+                <input type="submit" value="Go">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="email.contentmanager.html"
+                          title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.contentmanager</span></code>: Managing MIME Content</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="email.compat32-message.html"
+                          title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">Report a bug</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/email.examples.rst?plain=1"
+            rel="nofollow">Show source
+        </a>
+      </li>
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
 
-
-  </head><body>
   
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -65,33 +141,44 @@
           <a href="email.contentmanager.html" title="email.contentmanager: Managing MIME Content"
              accesskey="P">previous</a> |</li>
 
-    <li><img src="../_static/py.png" alt=""
-             style="vertical-align: middle; margin-top: -1px"/></li>
-    <li><a href="https://www.python.org/">Python</a> &#187;</li>
-    
-
-    <li>
-      <a href="../index.html">3.8.6 Documentation</a> &#187;
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.13.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> — An email and MIME handling package</a> &#187;</li>
-    <li class="right">
-        
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code>: Examples</a></li>
+                <li class="right">
+                    
 
-    <div class="inline-search" style="display: none" role="search">
+    <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Quick search" type="text" name="q" />
-          <input type="submit" value="Go" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
+          <input placeholder="Quick search" aria-label="Quick search" type="search" name="q" id="search-box">
+          <input type="submit" value="Go">
         </form>
     </div>
-    <script type="text/javascript">$('.inline-search').show(0);</script>
-         |
-    </li>
-
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
       </ul>
     </div>    
 
@@ -100,17 +187,17 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="email-examples">
-<span id="id1"></span><h1><a class="reference internal" href="email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>: Examples<a class="headerlink" href="#email-examples" title="Permalink to this headline">¶</a></h1>
+  <section id="email-examples">
+<span id="id1"></span><h1><a class="reference internal" href="email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>: Examples<a class="headerlink" href="#email-examples" title="Link to this heading">¶</a></h1>
 <p>Here are a few examples of how to use the <a class="reference internal" href="email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a> package to read, write,
 and send simple email messages, as well as more complex MIME messages.</p>
 <p>First, let’s see how to create and send a simple text message (both the
 text content and the addresses may contain unicode characters):</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import smtplib for the actual sending function</span>
-<span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
 
 <span class="c1"># Import the email modules we&#39;ll need</span>
-<span class="kn">from</span> <span class="nn">email.message</span> <span class="kn">import</span> <span class="n">EmailMessage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmailMessage</span>
 
 <span class="c1"># Open the plain text file whose name is in textfile for reading.</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">textfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
@@ -130,11 +217,12 @@ text content and the addresses may contain unicode characters):</p>
 <span class="n">s</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Parsing <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a> headers can easily be done by the using the classes
+<p>Parsing <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc822.html"><strong>RFC 822</strong></a> headers can easily be done by the using the classes
 from the <a class="reference internal" href="email.parser.html#module-email.parser" title="email.parser: Parse flat text email messages to produce a message object structure."><code class="xref py py-mod docutils literal notranslate"><span class="pre">parser</span></code></a> module:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the email modules we&#39;ll need</span>
-<span class="kn">from</span> <span class="nn">email.parser</span> <span class="kn">import</span> <span class="n">BytesParser</span><span class="p">,</span> <span class="n">Parser</span>
-<span class="kn">from</span> <span class="nn">email.policy</span> <span class="kn">import</span> <span class="n">default</span>
+<span class="c1">#from email.parser import BytesParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">Parser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.policy</span><span class="w"> </span><span class="kn">import</span> <span class="n">default</span>
 
 <span class="c1"># If the e-mail headers are in a file, uncomment these two lines:</span>
 <span class="c1"># with open(messagefile, &#39;rb&#39;) as fp:</span>
@@ -160,14 +248,11 @@ from the <a class="reference internal" href="email.parser.html#module-email.pars
 </div>
 <p>Here’s an example of how to send a MIME message containing a bunch of family
 pictures that may be residing in a directory:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import smtplib for the actual sending function</span>
-<span class="kn">import</span> <span class="nn">smtplib</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import smtplib for the actual sending function.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
 
-<span class="c1"># And imghdr to find the types of our images</span>
-<span class="kn">import</span> <span class="nn">imghdr</span>
-
-<span class="c1"># Here are the email package modules we&#39;ll need</span>
-<span class="kn">from</span> <span class="nn">email.message</span> <span class="kn">import</span> <span class="n">EmailMessage</span>
+<span class="c1"># Here are the email package modules we&#39;ll need.</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmailMessage</span>
 
 <span class="c1"># Create the container email message.</span>
 <span class="n">msg</span> <span class="o">=</span> <span class="n">EmailMessage</span><span class="p">()</span>
@@ -178,13 +263,13 @@ pictures that may be residing in a directory:</p>
 <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">family</span><span class="p">)</span>
 <span class="n">msg</span><span class="o">.</span><span class="n">preamble</span> <span class="o">=</span> <span class="s1">&#39;You will not see this in a MIME-aware mail reader.</span><span class="se">\n</span><span class="s1">&#39;</span>
 
-<span class="c1"># Open the files in binary mode.  Use imghdr to figure out the</span>
-<span class="c1"># MIME subtype for each specific image.</span>
+<span class="c1"># Open the files in binary mode.  You can also omit the subtype</span>
+<span class="c1"># if you want MIMEImage to guess it.</span>
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">pngfiles</span><span class="p">:</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
         <span class="n">img_data</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">msg</span><span class="o">.</span><span class="n">add_attachment</span><span class="p">(</span><span class="n">img_data</span><span class="p">,</span> <span class="n">maintype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span>
-                                 <span class="n">subtype</span><span class="o">=</span><span class="n">imghdr</span><span class="o">.</span><span class="n">what</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">img_data</span><span class="p">))</span>
+                                 <span class="n">subtype</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
 
 <span class="c1"># Send the email via our own SMTP server.</span>
 <span class="k">with</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
@@ -192,23 +277,23 @@ pictures that may be residing in a directory:</p>
 </pre></div>
 </div>
 <p>Here’s an example of how to send the entire contents of a directory as an email
-message: <a class="footnote-reference brackets" href="#id3" id="id2">1</a></p>
+message: <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="sd">&quot;&quot;&quot;Send the contents of a directory as a MIME message.&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
 <span class="c1"># For guessing MIME type based on file name extension</span>
-<span class="kn">import</span> <span class="nn">mimetypes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mimetypes</span>
 
-<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArgumentParser</span>
 
-<span class="kn">from</span> <span class="nn">email.message</span> <span class="kn">import</span> <span class="n">EmailMessage</span>
-<span class="kn">from</span> <span class="nn">email.policy</span> <span class="kn">import</span> <span class="n">SMTP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmailMessage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.policy</span><span class="w"> </span><span class="kn">import</span> <span class="n">SMTP</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
 <span class="s2">Send the contents of a directory as a MIME message.</span>
 <span class="s2">Unless the -o option is given, the email is sent by forwarding to your local</span>
@@ -248,7 +333,7 @@ message: <a class="footnote-reference brackets" href="#id3" id="id2">1</a></p>
         <span class="c1"># Guess the content type based on the file&#39;s extension.  Encoding</span>
         <span class="c1"># will be ignored, although we should check for simple things like</span>
         <span class="c1"># gzip&#39;d or compressed files.</span>
-        <span class="n">ctype</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">mimetypes</span><span class="o">.</span><span class="n">guess_type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">ctype</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">mimetypes</span><span class="o">.</span><span class="n">guess_file_type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ctype</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># No guess could be made, or the file is encoded (compressed), so</span>
             <span class="c1"># use a generic bag-of-bits type.</span>
@@ -278,16 +363,16 @@ above, into a directory of files:</p>
 
 <span class="sd">&quot;&quot;&quot;Unpack a MIME message into a directory of files.&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">email</span>
-<span class="kn">import</span> <span class="nn">mimetypes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">email</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mimetypes</span>
 
-<span class="kn">from</span> <span class="nn">email.policy</span> <span class="kn">import</span> <span class="n">default</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.policy</span><span class="w"> </span><span class="kn">import</span> <span class="n">default</span>
 
-<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArgumentParser</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
 <span class="s2">Unpack a MIME message into a directory of files.</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
@@ -335,22 +420,22 @@ image in the html part, and we save a copy of what we are going to send to
 disk, as well as sending it.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
-<span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
 
-<span class="kn">from</span> <span class="nn">email.message</span> <span class="kn">import</span> <span class="n">EmailMessage</span>
-<span class="kn">from</span> <span class="nn">email.headerregistry</span> <span class="kn">import</span> <span class="n">Address</span>
-<span class="kn">from</span> <span class="nn">email.utils</span> <span class="kn">import</span> <span class="n">make_msgid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmailMessage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.headerregistry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Address</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_msgid</span>
 
 <span class="c1"># Create the base text message.</span>
 <span class="n">msg</span> <span class="o">=</span> <span class="n">EmailMessage</span><span class="p">()</span>
-<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Ayons asperges pour le déjeuner&quot;</span>
+<span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Pourquoi pas des asperges pour ce midi ?&quot;</span>
 <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Address</span><span class="p">(</span><span class="s2">&quot;Pepé Le Pew&quot;</span><span class="p">,</span> <span class="s2">&quot;pepe&quot;</span><span class="p">,</span> <span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
 <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Address</span><span class="p">(</span><span class="s2">&quot;Penelope Pussycat&quot;</span><span class="p">,</span> <span class="s2">&quot;penelope&quot;</span><span class="p">,</span> <span class="s2">&quot;example.com&quot;</span><span class="p">),</span>
              <span class="n">Address</span><span class="p">(</span><span class="s2">&quot;Fabrette Pussycat&quot;</span><span class="p">,</span> <span class="s2">&quot;fabrette&quot;</span><span class="p">,</span> <span class="s2">&quot;example.com&quot;</span><span class="p">))</span>
 <span class="n">msg</span><span class="o">.</span><span class="n">set_content</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
 <span class="s2">Salut!</span>
 
-<span class="s2">Cela ressemble à un excellent recipie[1] déjeuner.</span>
+<span class="s2">Cette recette [1] sera sûrement un très bon repas.</span>
 
 <span class="s2">[1] http://www.yummly.com/recipe/Roasted-Asparagus-Epicurious-203718</span>
 
@@ -366,12 +451,12 @@ disk, as well as sending it.</p>
 <span class="s2">  &lt;head&gt;&lt;/head&gt;</span>
 <span class="s2">  &lt;body&gt;</span>
 <span class="s2">    &lt;p&gt;Salut!&lt;/p&gt;</span>
-<span class="s2">    &lt;p&gt;Cela ressemble à un excellent</span>
+<span class="s2">    &lt;p&gt;Cette</span>
 <span class="s2">        &lt;a href=&quot;http://www.yummly.com/recipe/Roasted-Asparagus-Epicurious-203718&quot;&gt;</span>
-<span class="s2">            recipie</span>
-<span class="s2">        &lt;/a&gt; déjeuner.</span>
+<span class="s2">            recette</span>
+<span class="s2">        &lt;/a&gt; sera sûrement un très bon repas.</span>
 <span class="s2">    &lt;/p&gt;</span>
-<span class="s2">    &lt;img src=&quot;cid:</span><span class="si">{asparagus_cid}</span><span class="s2">&quot; /&gt;</span>
+<span class="s2">    &lt;img src=&quot;cid:</span><span class="si">{asparagus_cid}</span><span class="s2">&quot;&gt;</span>
 <span class="s2">  &lt;/body&gt;</span>
 <span class="s2">&lt;/html&gt;</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">asparagus_cid</span><span class="o">=</span><span class="n">asparagus_cid</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">subtype</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)</span>
@@ -393,18 +478,25 @@ disk, as well as sending it.</p>
 </div>
 <p>If we were sent the message from the last example, here is one way we could
 process it:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">tempfile</span>
-<span class="kn">import</span> <span class="nn">mimetypes</span>
-<span class="kn">import</span> <span class="nn">webbrowser</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mimetypes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
 
 <span class="c1"># Import the email modules we&#39;ll need</span>
-<span class="kn">from</span> <span class="nn">email</span> <span class="kn">import</span> <span class="n">policy</span>
-<span class="kn">from</span> <span class="nn">email.parser</span> <span class="kn">import</span> <span class="n">BytesParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email</span><span class="w"> </span><span class="kn">import</span> <span class="n">policy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">email.parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesParser</span>
 
-<span class="c1"># An imaginary module that would make this work and be safe.</span>
-<span class="kn">from</span> <span class="nn">imaginary</span> <span class="kn">import</span> <span class="n">magic_html_parser</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">magic_html_parser</span><span class="p">(</span><span class="n">html_text</span><span class="p">,</span> <span class="n">partfiles</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return safety-sanitized html linked to partfiles.</span>
+
+<span class="sd">    Rewrite the href=&quot;cid:....&quot; attributes to point to the filenames in partfiles.</span>
+<span class="sd">    Though not trivial, this should be possible using html.parser.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Add the magic needed&quot;</span><span class="p">)</span>
+
 
 <span class="c1"># In a real program you&#39;d get the filename from the arguments.</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;outgoing.msg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
@@ -457,9 +549,6 @@ process it:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t know how to display </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">richest</span><span class="o">.</span><span class="n">get_content_type</span><span class="p">()))</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="c1"># The magic_html_parser has to rewrite the href=&quot;cid:....&quot; attributes to</span>
-    <span class="c1"># point to the filenames in partfiles.  It also has to do a safety-sanitize</span>
-    <span class="c1"># of the html.  It could be written using html.parser.</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">magic_html_parser</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">get_content</span><span class="p">(),</span> <span class="n">partfiles</span><span class="p">))</span>
 <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -473,49 +562,59 @@ process it:</p>
 <p>Up to the prompt, the output from the above is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>To: Penelope Pussycat &lt;penelope@example.com&gt;, Fabrette Pussycat &lt;fabrette@example.com&gt;
 From: Pepé Le Pew &lt;pepe@example.com&gt;
-Subject: Ayons asperges pour le déjeuner
+Subject: Pourquoi pas des asperges pour ce midi ?
 
 Salut!
 
-Cela ressemble à un excellent recipie[1] déjeuner.
+Cette recette [1] sera sûrement un très bon repas.
 </pre></div>
 </div>
 <p class="rubric">Footnotes</p>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>Thanks to Matthew Dixon Cowles for the original inspiration and examples.</p>
-</dd>
-</dl>
-</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Thanks to Matthew Dixon Cowles for the original inspiration and examples.</p>
+</aside>
+</aside>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="email.contentmanager.html"
-                        title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.contentmanager</span></code>: Managing MIME Content</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="email.compat32-message.html"
-                        title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="email.contentmanager.html"
+                          title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.contentmanager</span></code>: Managing MIME Content</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="email.compat32-message.html"
+                          title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></p>
+  </div>
   <div role="note" aria-label="source link">
-    <h3>This Page</h3>
+    <h3>This page</h3>
     <ul class="this-page-menu">
-      <li><a href="../bugs.html">Report a Bug</a></li>
+      <li><a href="../bugs.html">Report a bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.8/Doc/library/email.examples.rst"
-            rel="nofollow">Show Source
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/email.examples.rst?plain=1"
+            rel="nofollow">Show source
         </a>
       </li>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -531,49 +630,76 @@ Cela ressemble à un excellent recipie[1] déjeuner.
           <a href="email.contentmanager.html" title="email.contentmanager: Managing MIME Content"
              >previous</a> |</li>
 
-    <li><img src="../_static/py.png" alt=""
-             style="vertical-align: middle; margin-top: -1px"/></li>
-    <li><a href="https://www.python.org/">Python</a> &#187;</li>
-    
-
-    <li>
-      <a href="../index.html">3.8.6 Documentation</a> &#187;
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.13.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> — An email and MIME handling package</a> &#187;</li>
-    <li class="right">
-        
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code>: Examples</a></li>
+                <li class="right">
+                    
 
-    <div class="inline-search" style="display: none" role="search">
+    <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Quick search" type="text" name="q" />
-          <input type="submit" value="Go" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
+          <input placeholder="Quick search" aria-label="Quick search" type="search" name="q" id="search-box">
+          <input type="submit" value="Go">
         </form>
     </div>
-    <script type="text/javascript">$('.inline-search').show(0);</script>
-         |
-    </li>
-
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2020, Python Software Foundation.
-    <br />
+    &copy; 
+      <a href="../copyright.html">
+    
+    Copyright
+    
+      </a>
+     2001-2025, Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
-<br />
-    <br />
+<br>
+    <br>
+      Last updated on Aug 19, 2025 (08:41 UTC).
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
 
-    Last updated on Oct 01, 2020.
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
-    <br />
-
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 2.3.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 
   </body>

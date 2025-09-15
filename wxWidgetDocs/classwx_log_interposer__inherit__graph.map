@@ -1,5 +1,0 @@
-<map id="wxLogInterposer" name="wxLogInterposer">
-<area shape="rect" id="node4" href="$classwx_log_window.html" title="This class represents a background log window: to be precise, it collects all log messages in the log..." alt="" coords="11,229,118,256"/>
-<area shape="rect" id="node2" href="$classwx_log_chain.html" title="This simple class allows you to chain log sinks, that is to install a new sink but keep passing log m..." alt="" coords="17,80,112,107"/>
-<area shape="rect" id="node3" href="$classwx_log.html" title="wxLog class defines the interface for the log targets used by wxWidgets logging functions as explaine..." alt="" coords="35,5,95,32"/>
-</map>
